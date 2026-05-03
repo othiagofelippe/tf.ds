@@ -18,11 +18,7 @@
       "Bash(mkdir *)",
       "Bash(echo *)"
     ],
-    "deny": [
-      "Bash(rm -rf *)",
-      "Bash(git push --force*)",
-      "Bash(git reset --hard*)"
-    ]
+    "deny": ["Bash(rm -rf *)", "Bash(git push --force*)", "Bash(git reset --hard*)"]
   },
   "hooks": {
     "SessionStart": [
@@ -65,6 +61,17 @@
           {
             "type": "command",
             "command": "bash \"$(git rev-parse --show-toplevel 2>/dev/null)\"/.claude/hooks/next-steps.sh 2>/dev/null || true"
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '⚠️  Contexto sendo compactado. Estado atual:' && git status --short 2>/dev/null | head -5 && echo '📋 Componentes em andamento:' && find docs/specs -name 'tasks.md' ! -path '*/_template/*' -exec grep -l '🟡\\|🔴' {} \\; 2>/dev/null | sed 's|docs/specs/||;s|/tasks.md||' | sed 's/^/  - /' || true"
           }
         ]
       }
