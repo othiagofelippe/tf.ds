@@ -1,0 +1,8 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "pnpm --filter @tfds/tokens build && pnpm --filter @tfds/docs build",
+  "outputDirectory": "apps/docs/storybook-static",
+  "installCommand": "pnpm install",
+  "framework": null,
+  "ignoreCommand": "git diff --quiet HEAD^ HEAD -- apps/docs packages/components packages/tokens"
+}
