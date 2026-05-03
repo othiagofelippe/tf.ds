@@ -1,0 +1,5 @@
+@import "../../../packages/tokens/dist/css/index.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
