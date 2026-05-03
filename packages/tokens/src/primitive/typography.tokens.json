@@ -1,38 +1,38 @@
 {
   "font": {
     "family": {
-      "sans":    { "$value": "'Roboto', Arial, Helvetica, sans-serif",          "$type": "fontFamily" },
-      "display": { "$value": "'Poppins', Arial, Helvetica, sans-serif",         "$type": "fontFamily" },
-      "mono":    { "$value": "'Roboto Mono', 'Courier New', monospace",         "$type": "fontFamily" }
+      "sans": { "$value": "'Roboto', Arial, Helvetica, sans-serif", "$type": "fontFamily" },
+      "display": { "$value": "'Poppins', Arial, Helvetica, sans-serif", "$type": "fontFamily" },
+      "mono": { "$value": "'Roboto Mono', 'Courier New', monospace", "$type": "fontFamily" }
     },
     "size": {
-      "xs":   { "$value": "0.75rem",   "$type": "dimension" },
-      "sm":   { "$value": "0.875rem",  "$type": "dimension" },
-      "md":   { "$value": "1rem",      "$type": "dimension" },
-      "lg":   { "$value": "1.125rem",  "$type": "dimension" },
-      "xl":   { "$value": "1.25rem",   "$type": "dimension" },
-      "2xl":  { "$value": "1.5rem",    "$type": "dimension" },
-      "3xl":  { "$value": "1.875rem",  "$type": "dimension" },
-      "4xl":  { "$value": "2.25rem",   "$type": "dimension" },
-      "5xl":  { "$value": "3rem",      "$type": "dimension" }
+      "xs": { "$value": "0.75rem", "$type": "dimension" },
+      "sm": { "$value": "0.875rem", "$type": "dimension" },
+      "md": { "$value": "1rem", "$type": "dimension" },
+      "lg": { "$value": "1.125rem", "$type": "dimension" },
+      "xl": { "$value": "1.25rem", "$type": "dimension" },
+      "2xl": { "$value": "1.5rem", "$type": "dimension" },
+      "3xl": { "$value": "1.875rem", "$type": "dimension" },
+      "4xl": { "$value": "2.25rem", "$type": "dimension" },
+      "5xl": { "$value": "3rem", "$type": "dimension" }
     },
     "weight": {
-      "regular":   { "$value": "400", "$type": "fontWeight" },
-      "medium":    { "$value": "500", "$type": "fontWeight" },
-      "semibold":  { "$value": "600", "$type": "fontWeight" },
-      "bold":      { "$value": "700", "$type": "fontWeight" }
+      "regular": { "$value": "400", "$type": "fontWeight" },
+      "medium": { "$value": "500", "$type": "fontWeight" },
+      "semibold": { "$value": "600", "$type": "fontWeight" },
+      "bold": { "$value": "700", "$type": "fontWeight" }
     },
     "lineHeight": {
-      "none":    { "$value": "1",     "$type": "number" },
-      "tight":   { "$value": "1.25",  "$type": "number" },
-      "snug":    { "$value": "1.375", "$type": "number" },
-      "normal":  { "$value": "1.5",   "$type": "number" },
+      "none": { "$value": "1", "$type": "number" },
+      "tight": { "$value": "1.25", "$type": "number" },
+      "snug": { "$value": "1.375", "$type": "number" },
+      "normal": { "$value": "1.5", "$type": "number" },
       "relaxed": { "$value": "1.625", "$type": "number" }
     },
     "letterSpacing": {
-      "tight":  { "$value": "-0.02em", "$type": "dimension" },
-      "normal": { "$value": "0em",     "$type": "dimension" },
-      "wide":   { "$value": "0.025em", "$type": "dimension" }
+      "tight": { "$value": "-0.02em", "$type": "dimension" },
+      "normal": { "$value": "0em", "$type": "dimension" },
+      "wide": { "$value": "0.025em", "$type": "dimension" }
     }
   }
 }

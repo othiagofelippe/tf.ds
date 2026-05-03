@@ -24,11 +24,13 @@ O argumento `$ARGUMENTS` é o nome do componente em PascalCase (ex: `Badge`, `In
 ### Passo 1 — Criar spec
 
 Crie `docs/specs/<name-lowercase>/requirements.md` com:
+
 - Overview do componente e seu propósito no DS
 - Functional Requirements (variantes, tamanhos, estados, acessibilidade, API)
 - Non-functional Requirements (bundle size, status inicial como `experimental`)
 
 Crie `docs/specs/<name-lowercase>/design.md` com:
+
 - Anatomia em ASCII
 - Tabela de Props API completa
 - Tabela de variantes com uso semântico e tokens consumidos
@@ -39,6 +41,7 @@ Crie `docs/specs/<name-lowercase>/tasks.md` com todas as tasks desmarcadas segui
 ### Passo 2 — Implementar componente
 
 Siga rigorosamente os padrões do tf.ds:
+
 - TypeScript strict, sem `any`, sem `!`
 - `interface` para props, nunca `type`
 - `forwardRef` obrigatório
@@ -58,6 +61,7 @@ pnpm build
 ### Passo 4 — Informar
 
 Ao terminar, liste:
+
 - Arquivos criados
 - Props API do componente
 - Próximos passos (testes e Storybook story)

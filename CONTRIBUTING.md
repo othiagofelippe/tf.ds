@@ -42,6 +42,7 @@ experimental → stable → deprecated → removed
 ```
 
 A component is `stable` when it has:
+
 - All variant stories in Storybook
 - Controls panel working
 - Do / Don't examples

@@ -5,7 +5,9 @@
   "license": "MIT",
   "type": "module",
   "main": "index.js",
-  "files": ["*.js"],
+  "files": [
+    "*.js"
+  ],
   "dependencies": {
     "@eslint/js": "^9.0.0",
     "eslint-plugin-react": "^7.37.0",

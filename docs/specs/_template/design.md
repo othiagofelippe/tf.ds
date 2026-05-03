@@ -9,8 +9,8 @@ Diagrama ASCII do componente
 ## Props API
 
 | Prop | Tipo | Default | Descrição |
-|---|---|---|---|
-| | | | |
+| ---- | ---- | ------- | --------- |
+|      |      |         |           |
 
 ## Variantes / Estados
 

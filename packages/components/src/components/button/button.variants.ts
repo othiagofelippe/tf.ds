@@ -29,11 +29,7 @@ export const buttonVariants = cva(
           "hover:bg-bg-subtle",
           "active:bg-bg-subtle",
         ],
-        ghost: [
-          "bg-transparent text-text-primary",
-          "hover:bg-bg-subtle",
-          "active:bg-bg-subtle",
-        ],
+        ghost: ["bg-transparent text-text-primary", "hover:bg-bg-subtle", "active:bg-bg-subtle"],
         destructive: [
           "bg-feedback-error text-text-on-brand",
           "hover:opacity-90",

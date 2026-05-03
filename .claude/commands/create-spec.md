@@ -17,6 +17,7 @@ Crie os três arquivos em `docs/specs/<name-lowercase>/`:
 ### requirements.md
 
 Estrutura obrigatória:
+
 - **Overview**: o que é o componente, quando usar
 - **FR-01 a FR-0N**: requisitos funcionais agrupados por categoria (variantes, tamanhos, estados, acessibilidade, API)
 - **Non-Functional Requirements**: bundle size máximo, status inicial (`experimental`)
@@ -26,6 +27,7 @@ Use linguagem de requisitos: DEVE, NÃO DEVE, PODE.
 ### design.md
 
 Estrutura obrigatória:
+
 - **Anatomia**: diagrama ASCII mostrando as partes do componente
 - **Props API**: tabela com Prop, Tipo, Default, Descrição
 - **Variantes**: tabela com Variante, Uso semântico, Background, Texto

@@ -5,6 +5,7 @@ Design system context for AI coding assistants.
 ## What is tf.ds
 
 tf.ds is a professional, opinionated React design system by Thiago Felippe. It ships as two npm packages:
+
 - `@tfds/tokens` — design tokens in W3C DTCG format
 - `@tfds/components` — React components (Radix UI + CVA + Tailwind 4)
 
@@ -33,6 +34,7 @@ docs/rfc/            → Request for Comments
 ## Token Architecture
 
 3-layer hierarchy:
+
 1. **Primitive** — raw values: `color.ocean.500`, `space.4`, `font.size.md`
 2. **Semantic** — intent: `color.text.primary`, `color.bg.default`, `color.action.primary`
 3. **Component** — scoped: `button.color.bg.primary`

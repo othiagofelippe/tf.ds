@@ -5,6 +5,7 @@
 ---
 
 ## Implementação
+
 - [ ] Criar `<name>.variants.ts`
 - [ ] Criar `<name>.tsx`
 - [ ] Criar `index.ts`
@@ -12,6 +13,7 @@
 - [ ] Validar build
 
 ## Testes
+
 - [ ] Criar `<name>.test.tsx`
   - [ ] Renderiza sem erros
   - [ ] Variantes corretas
@@ -19,6 +21,7 @@
   - [ ] forwardRef funciona
 
 ## Storybook
+
 - [ ] Criar `<Name>.stories.tsx`
   - [ ] Todas as variantes
   - [ ] Todos os estados
@@ -27,10 +30,12 @@
   - [ ] Do / Don't
 
 ## Acessibilidade
+
 - [ ] Contraste WCAG AA nos 3 temas
 - [ ] Navegação por teclado
 - [ ] axe-core zero violations
 
 ## Critério de `stable`
+
 - [ ] Todos os itens acima concluídos
 - [ ] Status atualizado no Storybook

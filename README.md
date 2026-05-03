@@ -4,10 +4,10 @@ A professional, opinionated design system by [Thiago Felippe](https://github.com
 
 ## Packages
 
-| Package | Description | Version |
-|---|---|---|
-| [`@tfds/tokens`](./packages/tokens) | Design tokens (W3C DTCG format) | ![npm](https://img.shields.io/npm/v/@tfds/tokens) |
-| [`@tfds/components`](./packages/components) | React components | ![npm](https://img.shields.io/npm/v/@tfds/components) |
+| Package                                     | Description                     | Version                                               |
+| ------------------------------------------- | ------------------------------- | ----------------------------------------------------- |
+| [`@tfds/tokens`](./packages/tokens)         | Design tokens (W3C DTCG format) | ![npm](https://img.shields.io/npm/v/@tfds/tokens)     |
+| [`@tfds/components`](./packages/components) | React components                | ![npm](https://img.shields.io/npm/v/@tfds/components) |
 
 ## Getting Started
 
@@ -38,8 +38,12 @@ tf.ds ships with three themes:
 Apply by setting the class on `<html>`:
 
 ```html
-<html class="dark">   <!-- dark mode -->
-<html class="ocean">  <!-- ocean theme -->
+<html class="dark">
+  <!-- dark mode -->
+  <html class="ocean">
+    <!-- ocean theme -->
+  </html>
+</html>
 ```
 
 ## Documentation

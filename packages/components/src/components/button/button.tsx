@@ -4,8 +4,7 @@ import { cn } from "../../lib/cn"
 import { buttonVariants } from "./button.variants"
 
 interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
   loading?: boolean
   loadingLabel?: string
 }

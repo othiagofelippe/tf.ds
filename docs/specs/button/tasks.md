@@ -5,6 +5,7 @@
 ---
 
 ## Implementação
+
 - [x] Criar `button.variants.ts` com CVA (todas as variantes e tamanhos)
 - [x] Criar `button.tsx` com forwardRef e props API
 - [x] Criar `index.ts` com exports
@@ -12,6 +13,7 @@
 - [x] Validar build (tsup)
 
 ## Testes
+
 - [ ] Criar `button.test.tsx` com Vitest + Testing Library
   - [ ] Renderiza sem erros
   - [ ] Aplica variante correta
@@ -22,6 +24,7 @@
   - [ ] Dispara `onClick` corretamente
 
 ## Storybook
+
 - [ ] Criar `Button.stories.tsx` em `apps/docs`
   - [ ] Story: todas as variantes
   - [ ] Story: todos os tamanhos
@@ -34,10 +37,12 @@
   - [ ] Do / Don't documentados
 
 ## Acessibilidade
+
 - [ ] Validar contraste WCAG AA em todas as variantes nos 3 temas
 - [ ] Validar navegação por teclado (tab + enter + space)
 - [ ] Validar axe-core no Storybook (zero violations)
 
 ## Critério de `stable`
+
 - [ ] Todos os itens acima concluídos
 - [ ] Status atualizado para `stable` no Storybook

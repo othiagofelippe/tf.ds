@@ -54,6 +54,7 @@ tf.ds is an opinionated design system. Consumers use declared APIs — the syste
 Colors use OKLCH for perceptually uniform lightness and consistent chroma across the scale. This improves WCAG AA contrast reliability compared to sRGB hex values.
 
 Three themes are available:
+
 - **light** and **dark** share the same semantic token names, differ only in values
 - **ocean** is fully independent — deep teal backgrounds with coral as the brand action color
 

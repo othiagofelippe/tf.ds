@@ -11,7 +11,9 @@
     "./js/themes/*": "./dist/js/themes/*.js",
     "./tailwind": "./dist/tailwind/preset.js"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "node build.js",
     "dev": "node build.js --watch",

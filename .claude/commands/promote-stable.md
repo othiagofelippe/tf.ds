@@ -32,9 +32,11 @@ Se algum comando falhar, reporte o erro e **não prossiga**.
 ### Passo 3 — Atualizar spec
 
 Em `docs/specs/<name-lowercase>/tasks.md`:
+
 - Altere o status para `🟢 Concluído`
 
 Em `docs/specs/<name-lowercase>/requirements.md`:
+
 - Altere `Status inicial: experimental` para `Status: stable`
 
 ### Passo 4 — Criar changeset
