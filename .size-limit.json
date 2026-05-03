@@ -1,0 +1,17 @@
+[
+  {
+    "name": "@tfds/components (ESM)",
+    "path": "packages/components/dist/index.js",
+    "limit": "50 kB"
+  },
+  {
+    "name": "@tfds/components (CJS)",
+    "path": "packages/components/dist/index.cjs",
+    "limit": "50 kB"
+  },
+  {
+    "name": "@tfds/tokens (CSS)",
+    "path": "packages/tokens/dist/css/themes/light.css",
+    "limit": "10 kB"
+  }
+]

@@ -14,7 +14,8 @@
     "format:check": "prettier --check \"**/*.{ts,tsx,md,json,css,yaml,yml}\"",
     "changeset": "changeset",
     "version-packages": "changeset version",
-    "release": "turbo build && changeset publish"
+    "release": "turbo build && changeset publish",
+    "prepare": "husky"
   },
   "devDependencies": {
     "@changesets/cli": "^2.29.0",
@@ -33,10 +34,18 @@
     "pnpm": ">=10.0.0"
   },
   "pnpm": {
-    "onlyBuiltDependencies": ["@bundled-es-modules/glob", "esbuild", "style-dictionary"]
+    "onlyBuiltDependencies": [
+      "@bundled-es-modules/glob",
+      "esbuild",
+      "style-dictionary"
+    ]
   },
   "lint-staged": {
-    "**/*.{ts,tsx}": ["eslint --fix", "prettier --write"],
-    "**/*.{md,json,css,yaml,yml}": ["prettier --write"]
+    "**/*.{ts,tsx}": [
+      "prettier --write"
+    ],
+    "**/*.{md,json,css,yaml,yml}": [
+      "prettier --write"
+    ]
   }
 }
