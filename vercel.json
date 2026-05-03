@@ -4,5 +4,5 @@
   "outputDirectory": "apps/docs/storybook-static",
   "installCommand": "pnpm install",
   "framework": null,
-  "ignoreCommand": "git diff --quiet HEAD^ HEAD -- apps/docs packages/components packages/tokens"
+  "ignoreCommand": "git diff --quiet HEAD^ HEAD -- apps/docs packages/components packages/tokens 2>/dev/null || exit 1"
 }
