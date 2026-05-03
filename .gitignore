@@ -9,3 +9,4 @@ coverage
 .kiro/
 storybook-static/
 .vercel/
+.vercel
