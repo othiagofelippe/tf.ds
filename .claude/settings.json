@@ -1,0 +1,62 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm *)",
+      "Bash(npx *)",
+      "Bash(node *)",
+      "Bash(git status*)",
+      "Bash(git diff*)",
+      "Bash(git log*)",
+      "Bash(git branch*)",
+      "Bash(git add*)",
+      "Bash(git commit*)",
+      "Bash(git push*)",
+      "Bash(gh *)",
+      "Bash(ls *)",
+      "Bash(find *)",
+      "Bash(cat *)",
+      "Bash(mkdir *)",
+      "Bash(echo *)"
+    ],
+    "deny": [
+      "Bash(rm -rf *)",
+      "Bash(git push --force*)",
+      "Bash(git reset --hard*)"
+    ]
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '📍 Branch:' $(git branch --show-current 2>/dev/null || echo 'N/A') && echo '📊 Status:' && git status --short 2>/dev/null | head -8 || echo 'Não é um repositório git'"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "FILE_PATH=$(echo \"$CLAUDE_TOOL_INPUT\" | grep -o '\"file_path\":\"[^\"]*\"' | cut -d'\"' -f4 2>/dev/null) && if echo \"$FILE_PATH\" | grep -qE '\\.(ts|tsx|json|css|md)$'; then pnpm prettier --write \"$FILE_PATH\" 2>/dev/null || true; fi"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "COMMAND=$(echo \"$CLAUDE_TOOL_INPUT\" | grep -o '\"command\":\"[^\"]*\"' | cut -d'\"' -f4 2>/dev/null) && if echo \"$COMMAND\" | grep -q 'git commit'; then LOGS=$(git diff --cached -U0 2>/dev/null | grep -c 'console\\.log' || echo 0) && if [ \"$LOGS\" -gt 0 ]; then echo \"❌ Remova os $LOGS console.log antes de commitar\" >&2 && exit 2; fi; fi"
+          }
+        ]
+      }
+    ]
+  }
+}
