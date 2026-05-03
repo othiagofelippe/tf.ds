@@ -1,0 +1,8 @@
+{
+  "extends": "@tfds/tsconfig/react-library.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "storybook-static"
+  },
+  "include": ["src", ".storybook"]
+}

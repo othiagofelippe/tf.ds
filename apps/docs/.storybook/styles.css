@@ -1,0 +1,7 @@
+/* Design tokens — CSS variables for all 3 themes */
+@import "../../../packages/tokens/dist/css/index.css";
+
+/* Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

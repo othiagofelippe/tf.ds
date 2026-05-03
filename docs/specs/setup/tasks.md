@@ -67,10 +67,10 @@
 
 ## Fase 6 — Storybook
 
-- [ ] Configurar Storybook em `apps/docs`
-- [ ] Instalar addons: a11y, docs, themes, vitest
-- [ ] Criar story do `Button` (todas as variantes)
-- [ ] Configurar tema tf.ds no Storybook
+- [x] Configurar Storybook em `apps/docs`
+- [x] Instalar addons: a11y, docs, themes
+- [x] Criar story do `Button` (todas as variantes)
+- [x] Configurar tema tf.ds no Storybook (light/dark/ocean via withThemeByClassName)
 - [ ] Configurar deploy na Vercel
 
 ---
@@ -83,5 +83,5 @@ Fase 2 — Design Tokens          █████████ 100%
 Fase 3 — Componentes            █████████ 100%
 Fase 4 — Documentação           █████████ 100%
 Fase 5 — CI/CD                  █████████ 100%
-Fase 6 — Storybook              ░░░░░░░░░   0%
+Fase 6 — Storybook              ████████░  89%
 ```

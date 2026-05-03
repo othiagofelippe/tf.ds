@@ -20,6 +20,11 @@
     "test": {
       "dependsOn": ["^build"],
       "outputs": ["coverage/**"]
+    },
+    "build-storybook": {
+      "dependsOn": ["^build"],
+      "inputs": ["$TURBO_DEFAULT$", ".storybook/**"],
+      "outputs": ["storybook-static/**"]
     }
   }
 }
