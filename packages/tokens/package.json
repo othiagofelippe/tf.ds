@@ -1,0 +1,24 @@
+{
+  "name": "@tfds/tokens",
+  "version": "0.0.1",
+  "description": "Design tokens for tf.ds — W3C DTCG format",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    "./css": "./dist/css/index.css",
+    "./css/themes/*": "./dist/css/themes/*.css",
+    "./js": "./dist/js/index.js",
+    "./js/themes/*": "./dist/js/themes/*.js",
+    "./tailwind": "./dist/tailwind/preset.js"
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "node build.js",
+    "dev": "node build.js --watch",
+    "lint": "echo 'No lint for tokens'",
+    "type-check": "echo 'No type-check for tokens'"
+  },
+  "devDependencies": {
+    "style-dictionary": "^4.3.0"
+  }
+}

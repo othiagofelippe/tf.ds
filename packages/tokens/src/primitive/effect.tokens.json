@@ -1,0 +1,41 @@
+{
+  "shadow": {
+    "none": { "$value": "none",                                                         "$type": "shadow" },
+    "sm":   { "$value": "0 1px 3px oklch(0.40 0.15 255 / 0.12)",                       "$type": "shadow" },
+    "md":   { "$value": "0 4px 6px oklch(0.40 0.15 255 / 0.10)",                       "$type": "shadow" },
+    "lg":   { "$value": "0 10px 15px oklch(0.40 0.15 255 / 0.10)",                     "$type": "shadow" },
+    "xl":   { "$value": "0 20px 25px oklch(0.40 0.15 255 / 0.10)",                     "$type": "shadow" }
+  },
+  "opacity": {
+    "disabled": { "$value": "0.4", "$type": "number" },
+    "loading":  { "$value": "0.6", "$type": "number" },
+    "overlay":  { "$value": "0.5", "$type": "number" }
+  },
+  "zIndex": {
+    "behind":   { "$value": "-1",  "$type": "number" },
+    "base":     { "$value": "0",   "$type": "number" },
+    "sticky":   { "$value": "100", "$type": "number" },
+    "dropdown": { "$value": "200", "$type": "number" },
+    "overlay":  { "$value": "300", "$type": "number" },
+    "modal":    { "$value": "400", "$type": "number" },
+    "toast":    { "$value": "500", "$type": "number" }
+  },
+  "motion": {
+    "duration": {
+      "instant": { "$value": "100ms", "$type": "duration" },
+      "fast":    { "$value": "150ms", "$type": "duration" },
+      "normal":  { "$value": "250ms", "$type": "duration" },
+      "slow":    { "$value": "400ms", "$type": "duration" }
+    },
+    "easing": {
+      "default": { "$value": "cubic-bezier(0.4, 0, 0.2, 1)", "$type": "cubicBezier" },
+      "in":      { "$value": "cubic-bezier(0.4, 0, 1, 1)",   "$type": "cubicBezier" },
+      "out":     { "$value": "cubic-bezier(0, 0, 0.2, 1)",   "$type": "cubicBezier" },
+      "spring":  { "$value": "cubic-bezier(0.34, 1.56, 0.64, 1)", "$type": "cubicBezier" }
+    }
+  },
+  "focus": {
+    "ringWidth":  { "$value": "2px", "$type": "dimension" },
+    "ringOffset": { "$value": "2px", "$type": "dimension" }
+  }
+}

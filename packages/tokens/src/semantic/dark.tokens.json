@@ -1,0 +1,48 @@
+{
+  "color": {
+    "text": {
+      "primary":   { "$value": "oklch(0.95 0.01 255)", "$type": "color" },
+      "secondary": { "$value": "oklch(0.65 0.01 255)", "$type": "color" },
+      "tertiary":  { "$value": "oklch(0.48 0.01 255)", "$type": "color" },
+      "disabled":  { "$value": "oklch(0.35 0.01 255)", "$type": "color" },
+      "inverse":   { "$value": "oklch(0.13 0.02 255)", "$type": "color" },
+      "onBrand":   { "$value": "oklch(0.99 0.00 0)",   "$type": "color" }
+    },
+    "bg": {
+      "page":    { "$value": "oklch(0.13 0.02 255)", "$type": "color" },
+      "default": { "$value": "oklch(0.16 0.02 255)", "$type": "color" },
+      "subtle":  { "$value": "oklch(0.19 0.02 255)", "$type": "color" },
+      "muted":   { "$value": "oklch(0.23 0.02 255)", "$type": "color" }
+    },
+    "surface": {
+      "default": { "$value": "oklch(0.18 0.02 255)", "$type": "color" },
+      "raised":  { "$value": "oklch(0.22 0.02 255)", "$type": "color" },
+      "sunken":  { "$value": "oklch(0.12 0.02 255)", "$type": "color" }
+    },
+    "border": {
+      "default": { "$value": "oklch(0.28 0.02 255)", "$type": "color" },
+      "subtle":  { "$value": "oklch(0.22 0.02 255)", "$type": "color" },
+      "strong":  { "$value": "oklch(0.45 0.02 255)", "$type": "color" }
+    },
+    "action": {
+      "primary":          { "$value": "oklch(0.67 0.22 255)", "$type": "color" },
+      "primaryHover":     { "$value": "oklch(0.78 0.16 255)", "$type": "color" },
+      "primarySubtle":    { "$value": "oklch(0.20 0.04 255)", "$type": "color" },
+      "primaryDisabled":  { "$value": "oklch(0.25 0.02 255)", "$type": "color" }
+    },
+    "feedback": {
+      "success":        { "$value": "oklch(0.65 0.16 145)", "$type": "color" },
+      "successSubtle":  { "$value": "oklch(0.20 0.06 145)", "$type": "color" },
+      "error":          { "$value": "oklch(0.65 0.20 25)",  "$type": "color" },
+      "errorSubtle":    { "$value": "oklch(0.20 0.06 25)",  "$type": "color" },
+      "warning":        { "$value": "oklch(0.76 0.16 85)",  "$type": "color" },
+      "warningSubtle":  { "$value": "oklch(0.22 0.06 85)",  "$type": "color" },
+      "warningText":    { "$value": "oklch(0.80 0.14 75)",  "$type": "color" }
+    },
+    "interactive": {
+      "pressed":  { "$value": "oklch(1 0 0 / 0.06)",         "$type": "color" },
+      "selected": { "$value": "oklch(0.20 0.04 255)",         "$type": "color" },
+      "focus":    { "$value": "oklch(0.67 0.22 255)",         "$type": "color" }
+    }
+  }
+}

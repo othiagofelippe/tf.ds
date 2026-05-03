@@ -1,0 +1,15 @@
+{
+  "name": "@tfds/eslint-config",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "main": "index.js",
+  "files": ["*.js"],
+  "dependencies": {
+    "@eslint/js": "^9.0.0",
+    "eslint-plugin-react": "^7.37.0",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "typescript-eslint": "^8.0.0"
+  }
+}
