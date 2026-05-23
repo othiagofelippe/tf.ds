@@ -28,12 +28,12 @@
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.3",
+    "@tfds/icons": "workspace:*",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "tailwind-merge": "^3.3.1"
   },
   "peerDependencies": {
-    "lucide-react": ">=0.400.0",
     "react": ">=18.0.0",
     "react-dom": ">=18.0.0"
   },

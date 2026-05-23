@@ -135,15 +135,15 @@ importers:
       "@radix-ui/react-slot":
         specifier: ^1.2.3
         version: 1.2.4(@types/react@19.2.14)(react@19.2.5)
+      "@tfds/icons":
+        specifier: workspace:*
+        version: link:../icons
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
-      lucide-react:
-        specifier: ">=0.400.0"
-        version: 1.14.0(react@19.2.5)
       react:
         specifier: ">=18.0.0"
         version: 19.2.5
@@ -5220,14 +5220,6 @@ packages:
     resolution:
       {
         integrity: sha512-VK5a2ydJ7xm8GvBeKLS9mu1pVK6ucef9780JVUjw6bAjJL/QXnd4Y0p7SPeOUMC27YhzNCZvm5d/QX0Tp3rc0w==,
-      }
-    peerDependencies:
-      react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
-
-  lucide-react@1.14.0:
-    resolution:
-      {
-        integrity: sha512-+1mdWcfSJVUsaTIjN9zoezmUhfXo5l0vP7ekBMPo3jcS/aIkxHnXqAPsByszMZx/Y8oQBRJxJx5xg+RH3urzxA==,
       }
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
@@ -10386,10 +10378,6 @@ snapshots:
       yallist: 3.1.1
 
   lucide-react@0.511.0(react@19.2.5):
-    dependencies:
-      react: 19.2.5
-
-  lucide-react@1.14.0(react@19.2.5):
     dependencies:
       react: 19.2.5
 
