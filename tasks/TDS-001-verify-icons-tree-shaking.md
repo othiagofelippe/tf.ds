@@ -34,6 +34,7 @@ Sugestão de verificação: criar dois arquivos `.ts` temporários, um importand
 - 2026-05-23: Slice 1 concluído — build bem-sucedido (`dist/index.js` 251.59 KB ESM, `dist/index.cjs` 336.99 KB)
 - 2026-05-23: Slice 2 concluído — script `measure-tree-shaking.ts` criado e executado com sucesso
 - 2026-05-23: Slice 3 — resultado FAIL confirmado. Impedimento registrado. Execução encerrada conforme plan.
+- 2026-05-23: commit 4389c1c criado com script de medição, eslint.config.js, package.json e task.md atualizados.
 
 ## Impedimentos
 
