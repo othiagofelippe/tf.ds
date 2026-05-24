@@ -1,4 +1,5 @@
 export { Button, type ButtonProps, buttonVariants } from "./components/button"
 export { Typography, type TypographyProps } from "./components/typography"
 export { Label, type LabelProps } from "./components/label"
+export { Badge, type BadgeProps } from "./components/badge"
 export { cn } from "./lib/cn"
