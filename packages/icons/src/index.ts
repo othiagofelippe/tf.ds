@@ -53,6 +53,20 @@ import { ExternalLink as LucideExternalLink } from "lucide-react"
 import { Moon as LucideMoon } from "lucide-react"
 import { Sun as LucideSun } from "lucide-react"
 import { Waves as LucideWaves } from "lucide-react"
+import { Github as LucideGithub } from "lucide-react"
+import { Linkedin as LucideLinkedin } from "lucide-react"
+import { GraduationCap as LucideGraduationCap } from "lucide-react"
+import { Download as LucideDownload } from "lucide-react"
+import { Menu as LucideMenu } from "lucide-react"
+import { Clock as LucideClock } from "lucide-react"
+import { Code2 as LucideCode2 } from "lucide-react"
+import { FileText as LucideFileText } from "lucide-react"
+import { Mail as LucideMail } from "lucide-react"
+import { Globe as LucideGlobe } from "lucide-react"
+import { MapPin as LucideMapPin } from "lucide-react"
+import { Paintbrush as LucidePaintbrush } from "lucide-react"
+import { Volume2 as LucideVolume2 } from "lucide-react"
+import { VolumeX as LucideVolumeX } from "lucide-react"
 
 export const ArrowLeft = createIcon(LucideArrowLeft)
 export const ArrowRight = createIcon(LucideArrowRight)
@@ -108,3 +122,17 @@ export const ExternalLink = createIcon(LucideExternalLink)
 export const Moon = createIcon(LucideMoon)
 export const Sun = createIcon(LucideSun)
 export const Waves = createIcon(LucideWaves)
+export const Github = createIcon(LucideGithub)
+export const Linkedin = createIcon(LucideLinkedin)
+export const GraduationCap = createIcon(LucideGraduationCap)
+export const Download = createIcon(LucideDownload)
+export const Menu = createIcon(LucideMenu)
+export const Clock = createIcon(LucideClock)
+export const Code2 = createIcon(LucideCode2)
+export const FileText = createIcon(LucideFileText)
+export const Mail = createIcon(LucideMail)
+export const Globe = createIcon(LucideGlobe)
+export const MapPin = createIcon(LucideMapPin)
+export const Paintbrush = createIcon(LucidePaintbrush)
+export const Volume2 = createIcon(LucideVolume2)
+export const VolumeX = createIcon(LucideVolumeX)
