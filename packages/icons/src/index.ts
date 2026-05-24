@@ -67,6 +67,9 @@ import { MapPin as LucideMapPin } from "lucide-react"
 import { Paintbrush as LucidePaintbrush } from "lucide-react"
 import { Volume2 as LucideVolume2 } from "lucide-react"
 import { VolumeX as LucideVolumeX } from "lucide-react"
+import { Settings2 as LucideSettings2 } from "lucide-react"
+import { Smartphone as LucideSmartphone } from "lucide-react"
+import { Server as LucideServer } from "lucide-react"
 
 export const ArrowLeft = createIcon(LucideArrowLeft)
 export const ArrowRight = createIcon(LucideArrowRight)
@@ -136,3 +139,6 @@ export const MapPin = createIcon(LucideMapPin)
 export const Paintbrush = createIcon(LucidePaintbrush)
 export const Volume2 = createIcon(LucideVolume2)
 export const VolumeX = createIcon(LucideVolumeX)
+export const Settings2 = createIcon(LucideSettings2)
+export const Smartphone = createIcon(LucideSmartphone)
+export const Server = createIcon(LucideServer)
