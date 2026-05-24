@@ -6,7 +6,10 @@
       "tertiary": { "$value": "oklch(0.62 0.09 205)", "$type": "color" },
       "disabled": { "$value": "oklch(0.52 0.10 205)", "$type": "color" },
       "inverse": { "$value": "oklch(0.14 0.04 210)", "$type": "color" },
-      "onBrand": { "$value": "oklch(0.96 0.01 205)", "$type": "color" }
+      "onBrand": { "$value": "oklch(0.96 0.01 205)", "$type": "color" },
+      "error": { "$value": "oklch(0.62 0.20 20)", "$type": "color" },
+      "success": { "$value": "oklch(0.65 0.16 150)", "$type": "color" },
+      "warning": { "$value": "oklch(0.80 0.14 75)", "$type": "color" }
     },
     "bg": {
       "page": { "$value": "oklch(0.14 0.04 210)", "$type": "color" },
