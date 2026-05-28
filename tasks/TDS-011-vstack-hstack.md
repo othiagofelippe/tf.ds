@@ -2,7 +2,7 @@
 
 **Projeto:** tf.ds
 **Assignee:** developer
-**Status:** todo
+**Status:** done
 **Depende de:** nenhuma
 
 ## Objetivo
@@ -34,50 +34,50 @@ Se o developer encontrar uma solução mais simples com o mesmo resultado (zero 
 
 ### VStack
 
-- [ ] Renderiza com `flex flex-col` como classes base
-- [ ] Props `gap`, `align`, `justify`, `as` com os mesmos valores e defaults do Stack atual
-- [ ] `forwardRef<HTMLElement, VStackProps>` com tipagem explícita
-- [ ] `displayName = "VStack"`
-- [ ] JSDoc `@experimental`
-- [ ] Sem `className`, sem `asChild`
+- [x] Renderiza com `flex flex-col` como classes base
+- [x] Props `gap`, `align`, `justify`, `as` com os mesmos valores e defaults do Stack atual
+- [x] `forwardRef<HTMLElement, VStackProps>` com tipagem explícita
+- [x] `displayName = "VStack"`
+- [x] JSDoc `@experimental`
+- [x] Sem `className`, sem `asChild`
 
 ### HStack
 
-- [ ] Renderiza com `flex flex-row` como classes base
-- [ ] Props `gap`, `align`, `justify`, `as` com os mesmos valores e defaults do VStack
-- [ ] Prop `wrap: boolean` — quando `true` aplica `flex-wrap`; default `false`
-- [ ] `forwardRef<HTMLElement, HStackProps>` com tipagem explícita
-- [ ] `displayName = "HStack"`
-- [ ] JSDoc `@experimental`
-- [ ] Sem `className`, sem `asChild`
+- [x] Renderiza com `flex flex-row` como classes base
+- [x] Props `gap`, `align`, `justify`, `as` com os mesmos valores e defaults do VStack
+- [x] Prop `wrap: boolean` — quando `true` aplica `flex-wrap`; default `false`
+- [x] `forwardRef<HTMLElement, HStackProps>` com tipagem explícita
+- [x] `displayName = "HStack"`
+- [x] JSDoc `@experimental`
+- [x] Sem `className`, sem `asChild`
 
 ### Núcleo compartilhado
 
-- [ ] Lógica de `gap`, `align`, `justify` existe em um único lugar — mudança numa dessas variants não exige editar dois arquivos
+- [x] Lógica de `gap`, `align`, `justify` existe em um único lugar — mudança numa dessas variants não exige editar dois arquivos
 
 ### Testes (vstack.test.tsx e hstack.test.tsx)
 
-- [ ] VStack: cobertura equivalente ao `stack.test.tsx` atual (base classes, gap, align, justify, as polimórfico, forwardRef) — adaptar nomes
-- [ ] HStack: mesma cobertura do VStack + testes para `wrap`:
+- [x] VStack: cobertura equivalente ao `stack.test.tsx` atual (base classes, gap, align, justify, as polimórfico, forwardRef) — adaptar nomes
+- [x] HStack: mesma cobertura do VStack + testes para `wrap`:
   - Sem `wrap` (ou `wrap={false}`): não aplica `flex-wrap`
   - Com `wrap={true}`: aplica `flex-wrap`
 
 ### Estrutura de diretórios
 
-- [ ] Diretório `stack/` renomeado/reorganizado para `vstack/` e `hstack/` (ou `layout/` com subcomponentes — developer decide o que for mais limpo)
-- [ ] Cada componente tem seu próprio `index.ts` exportando o componente, a interface de props e as variants
+- [x] Diretório `stack/` renomeado/reorganizado para `vstack/` e `hstack/` (ou `layout/` com subcomponentes — developer decide o que for mais limpo)
+- [x] Cada componente tem seu próprio `index.ts` exportando o componente, a interface de props e as variants
 
 ### Exports públicos (`packages/components/src/index.ts`)
 
-- [ ] `export { VStack, type VStackProps, vstackVariants }` presente
-- [ ] `export { HStack, type HStackProps, hstackVariants }` presente
-- [ ] `export { Stack, type StackProps, stackVariants }` **removido**
+- [x] `export { VStack, type VStackProps, vstackVariants }` presente
+- [x] `export { HStack, type HStackProps, hstackVariants }` presente
+- [x] `export { Stack, type StackProps, stackVariants }` **removido**
 
 ### Build e qualidade
 
-- [ ] `pnpm --filter @tfds/components build` passa sem erros
-- [ ] `pnpm --filter @tfds/components test` passa (todos os testes, incluindo os novos)
-- [ ] `pnpm --filter @tfds/components type-check` limpo (se o script existir; se não, `tsc --noEmit`)
+- [x] `pnpm --filter @tfds/components build` passa sem erros
+- [x] `pnpm --filter @tfds/components test` passa (todos os testes, incluindo os novos)
+- [x] `pnpm --filter @tfds/components type-check` limpo (se o script existir; se não, `tsc --noEmit`)
 
 ## Arquivos esperados
 
@@ -110,7 +110,8 @@ Modificados:
 
 ## Log de progresso
 
-(vazio — developer preenche)
+- 2026-05-28: implementação concluída — variants compartilhadas, VStack, HStack, testes (90 total, 13 VStack + 16 HStack), type-check limpo, build limpo
+- 2026-05-28: commit f592976 criado na branch feat/tds-011-vstack-hstack
 
 ## Impedimentos
 
