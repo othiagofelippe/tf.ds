@@ -1,9 +1,9 @@
 import { forwardRef } from "react"
 import { type VariantProps } from "class-variance-authority"
 import { cn } from "../../lib/cn"
-import { stackVariants } from "./stack.variants"
+import { vstackVariants } from "./vstack.variants"
 
-type StackElement =
+type VStackElement =
   | "div"
   | "section"
   | "article"
@@ -15,18 +15,20 @@ type StackElement =
   | "ul"
   | "ol"
 
-interface StackProps
-  extends Omit<React.HTMLAttributes<HTMLElement>, "className">, VariantProps<typeof stackVariants> {
-  as?: StackElement
+interface VStackProps
+  extends
+    Omit<React.HTMLAttributes<HTMLElement>, "className">,
+    VariantProps<typeof vstackVariants> {
+  as?: VStackElement
 }
 
 /** @experimental */
-const Stack = forwardRef<HTMLElement, StackProps>(
+const VStack = forwardRef<HTMLElement, VStackProps>(
   ({ as: Tag = "div", gap, align, justify, children, ...props }, ref) => {
     return (
       <Tag
         ref={ref as React.RefCallback<HTMLElement>}
-        className={cn(stackVariants({ gap, align, justify }))}
+        className={cn(vstackVariants({ gap, align, justify }))}
         {...props}
       >
         {children}
@@ -35,6 +37,6 @@ const Stack = forwardRef<HTMLElement, StackProps>(
   },
 )
 
-Stack.displayName = "Stack"
+VStack.displayName = "VStack"
 
-export { Stack, type StackProps }
+export { VStack, type VStackProps }

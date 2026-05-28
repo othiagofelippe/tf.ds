@@ -3,5 +3,6 @@ export { Typography, type TypographyProps, typographyVariants } from "./componen
 export { Label, type LabelProps } from "./components/label"
 export { Badge, type BadgeProps } from "./components/badge"
 export { Input, type InputProps } from "./components/input"
-export { Stack, type StackProps, stackVariants } from "./components/stack"
+export { VStack, type VStackProps, vstackVariants } from "./components/vstack"
+export { HStack, type HStackProps, hstackVariants } from "./components/hstack"
 export { cn } from "./lib/cn"
