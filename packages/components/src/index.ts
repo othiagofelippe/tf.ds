@@ -1,6 +1,7 @@
 export { Button, type ButtonProps, buttonVariants } from "./components/button"
-export { Typography, type TypographyProps } from "./components/typography"
+export { Typography, type TypographyProps, typographyVariants } from "./components/typography"
 export { Label, type LabelProps } from "./components/label"
 export { Badge, type BadgeProps } from "./components/badge"
 export { Input, type InputProps } from "./components/input"
+export { Stack, type StackProps, stackVariants } from "./components/stack"
 export { cn } from "./lib/cn"
