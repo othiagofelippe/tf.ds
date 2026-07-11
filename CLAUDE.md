@@ -39,7 +39,7 @@ docs/rfc/            → Request for Comments
 2. **Semantic** — intent: `color.text.primary`, `color.bg.default`, `color.action.primary`
 3. **Component** — scoped: `button.color.bg.primary`
 
-Themes: `:root` (light), `.dark`, `.ocean` (fixed, independent)
+Themes: `:root` (light), `.dark`, `.ocean-sunset` (fixed, independent)
 Color space: OKLCH throughout
 Naming: dot notation in source → CSS kebab variables (`--tfds-color-text-primary`)
 

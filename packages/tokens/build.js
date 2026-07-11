@@ -3,7 +3,7 @@ import StyleDictionary from "style-dictionary"
 const themes = [
   { name: "light", selector: ":root" },
   { name: "dark", selector: ".dark" },
-  { name: "ocean", selector: ".ocean" },
+  { name: "ocean-sunset", selector: ".ocean-sunset" },
 ]
 
 const primitiveFiles = [
@@ -143,9 +143,15 @@ export default {
   await writeFile("dist/tailwind/preset.js", preset)
 }
 
+async function cleanDist() {
+  const { rm } = await import("fs/promises")
+  await rm("dist", { recursive: true, force: true })
+}
+
 async function main() {
   console.log("Building @tfds/tokens...")
 
+  await cleanDist()
   await buildPrimitives()
   for (const theme of themes) {
     await buildTheme(theme)
