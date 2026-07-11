@@ -9,7 +9,8 @@
     "./css/themes/*": "./dist/css/themes/*.css",
     "./js": "./dist/js/index.js",
     "./js/themes/*": "./dist/js/themes/*.js",
-    "./tailwind": "./dist/tailwind/preset.js"
+    "./tailwind": "./dist/tailwind/preset.js",
+    "./json/*": "./dist/json/*.json"
   },
   "files": [
     "dist"
@@ -18,9 +19,11 @@
     "build": "node build.js",
     "dev": "node build.js --watch",
     "lint": "echo 'No lint for tokens'",
-    "type-check": "echo 'No type-check for tokens'"
+    "type-check": "echo 'No type-check for tokens'",
+    "test": "vitest run"
   },
   "devDependencies": {
-    "style-dictionary": "^4.3.0"
+    "style-dictionary": "^4.3.0",
+    "vitest": "^3.2.0"
   }
 }

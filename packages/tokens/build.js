@@ -79,6 +79,28 @@ async function buildTheme(theme) {
   await sd.buildAllPlatforms()
 }
 
+async function buildThemeJson(theme) {
+  const sd = new StyleDictionary({
+    usesDtcg: true,
+    source: [...primitiveFiles, `src/semantic/${theme.name}.tokens.json`],
+    platforms: {
+      json: {
+        transformGroup: "js",
+        buildPath: "dist/json/",
+        files: [
+          {
+            destination: `${theme.name}.json`,
+            format: "json/nested",
+            options: { outputReferences: false },
+          },
+        ],
+      },
+    },
+  })
+
+  await sd.buildAllPlatforms()
+}
+
 async function buildIndex() {
   const cssImports = [
     `@import './primitives.css';`,
@@ -155,6 +177,7 @@ async function main() {
   await buildPrimitives()
   for (const theme of themes) {
     await buildTheme(theme)
+    await buildThemeJson(theme)
   }
   await buildIndex()
   await buildTailwindPreset()
@@ -162,7 +185,13 @@ async function main() {
   console.log("Done!")
 }
 
-main().catch((err) => {
-  console.error(err)
-  process.exit(1)
-})
+const isMain = process.argv[1] && import.meta.url === `file://${process.argv[1]}`
+
+if (isMain) {
+  main().catch((err) => {
+    console.error(err)
+    process.exit(1)
+  })
+}
+
+export { main, themes, primitiveFiles, buildThemeJson }
