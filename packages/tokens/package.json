@@ -10,7 +10,8 @@
     "./js": "./dist/js/index.js",
     "./js/themes/*": "./dist/js/themes/*.js",
     "./tailwind": "./dist/tailwind/preset.js",
-    "./json/*": "./dist/json/*.json"
+    "./json/*": "./dist/json/*.json",
+    "./types": "./dist/types/token-names.d.ts"
   },
   "files": [
     "dist"
@@ -23,7 +24,9 @@
     "test": "vitest run"
   },
   "devDependencies": {
+    "@tfds/tsconfig": "workspace:*",
     "style-dictionary": "^4.3.0",
+    "typescript": "^5.8.3",
     "vitest": "^3.2.0"
   }
 }
