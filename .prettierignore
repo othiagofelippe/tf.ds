@@ -3,3 +3,4 @@ dist
 .turbo
 .changeset
 coverage
+packages/tokens/test/fixtures/tokens/invalid-json.tokens.json

@@ -13,6 +13,73 @@ const primitiveFiles = [
   "src/primitive/effect.tokens.json",
 ]
 
+function collectTokenNodes(tree, prefix = []) {
+  const nodes = new Map()
+
+  for (const [key, value] of Object.entries(tree)) {
+    const path = [...prefix, key]
+
+    if (value === null || typeof value !== "object" || Array.isArray(value)) {
+      continue
+    }
+
+    if ("$value" in value) {
+      nodes.set(path.join("."), value)
+    } else {
+      for (const [nestedPath, node] of collectTokenNodes(value, path)) {
+        nodes.set(nestedPath, node)
+      }
+    }
+  }
+
+  return nodes
+}
+
+async function loadTokenFile(path) {
+  const { readFile } = await import("fs/promises")
+  const raw = await readFile(path, "utf-8")
+
+  try {
+    return JSON.parse(raw)
+  } catch (err) {
+    throw new Error(`Invalid JSON in ${path}: ${err.message}`)
+  }
+}
+
+const ALIAS_PATTERN = /^\{([^}]+)\}$/
+
+async function validateTokenFiles(files = [...primitiveFiles, ...themes.map((t) => `src/semantic/${t.name}.tokens.json`)]) {
+  const fileTrees = []
+  const allNodes = new Map()
+
+  for (const file of files) {
+    const tree = await loadTokenFile(file)
+    const nodes = collectTokenNodes(tree)
+    fileTrees.push({ file, nodes })
+
+    for (const [path, node] of nodes) {
+      if (!("$type" in node)) {
+        throw new Error(`Invalid DTCG token in ${file}: "${path}" has $value but is missing $type`)
+      }
+      allNodes.set(path, node)
+    }
+  }
+
+  for (const { file, nodes } of fileTrees) {
+    for (const [path, node] of nodes) {
+      if (typeof node.$value !== "string") continue
+
+      const match = node.$value.match(ALIAS_PATTERN)
+      if (!match) continue
+
+      const refPath = match[1]
+      if (!allNodes.has(refPath)) {
+        throw new Error(`Broken alias in ${file}: token "${path}" references "{${refPath}}", which does not exist`)
+      }
+    }
+  }
+}
+
 async function buildPrimitives() {
   const sd = new StyleDictionary({
     usesDtcg: true,
@@ -204,6 +271,7 @@ async function cleanDist() {
 async function main() {
   console.log("Building @tfds/tokens...")
 
+  await validateTokenFiles()
   await cleanDist()
   await buildPrimitives()
   for (const theme of themes) {
@@ -226,4 +294,4 @@ if (isMain) {
   })
 }
 
-export { main, themes, primitiveFiles, buildThemeJson, flattenTokenNames }
+export { main, themes, primitiveFiles, buildThemeJson, flattenTokenNames, validateTokenFiles }

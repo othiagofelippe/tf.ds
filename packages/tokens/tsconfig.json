@@ -2,7 +2,10 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "@tfds/tsconfig/base.json",
   "compilerOptions": {
-    "noEmit": true
+    "noEmit": true,
+    "allowJs": true,
+    "checkJs": false
   },
-  "include": ["test", "dist/types"]
+  "include": ["test", "dist/types", "build.js"],
+  "exclude": ["test/fixtures", "node_modules", "dist"]
 }

@@ -19,12 +19,13 @@
   "scripts": {
     "build": "node build.js",
     "dev": "node build.js --watch",
-    "lint": "echo 'No lint for tokens'",
-    "type-check": "echo 'No type-check for tokens'",
+    "lint": "node scripts/lint-tokens.mjs",
+    "type-check": "tsc --noEmit -p tsconfig.json",
     "test": "vitest run"
   },
   "devDependencies": {
     "@tfds/tsconfig": "workspace:*",
+    "@types/node": "^25.0.0",
     "style-dictionary": "^4.3.0",
     "typescript": "^5.8.3",
     "vitest": "^3.2.0"
