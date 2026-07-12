@@ -1,2 +1,5 @@
 export type { AnalyticsEvent, EventType, TrackAdapter } from "./types"
 export { buildAnalyticsEvent, emitAnalyticsEvent, DS_VERSION } from "./core"
+export { ParentComponentContext } from "./context"
+export { AnalyticsProvider, type AnalyticsProviderProps } from "./provider"
+export { useAnalytics, type UseAnalyticsOptions, type UseAnalyticsResult } from "./use-analytics"
