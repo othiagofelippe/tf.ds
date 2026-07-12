@@ -1,0 +1,84 @@
+{
+  "name": "Grid",
+  "componentName": "grid",
+  "status": "experimental",
+  "description": "Primitivo de layout que organiza filhos em CSS Grid. Expõe cols (fixo ou responsivo por breakpoint) e gap. Como primitivo de layout (AD-007), aceita className para templates exóticos — exceção à regra props-only do design system.",
+  "props": [
+    {
+      "name": "as",
+      "type": "\"div\" | \"section\" | \"article\" | \"aside\" | \"nav\" | \"header\" | \"footer\" | \"main\" | \"ul\" | \"ol\"",
+      "default": "div",
+      "description": "Elemento HTML semântico renderizado."
+    },
+    {
+      "name": "cols",
+      "type": "number | { base?: number; sm?: number; md?: number; lg?: number }",
+      "description": "Número de colunas (1–12). Aceita um número fixo ou um objeto responsivo por breakpoint."
+    },
+    {
+      "name": "gap",
+      "type": "\"0\" | \"0.5\" | \"1\" | \"1.5\" | \"2\" | \"2.5\" | \"3\" | \"3.5\" | \"4\" | \"5\" | \"6\" | \"7\" | \"8\" | \"9\" | \"10\" | \"12\" | \"14\" | \"16\" | \"20\" | \"24\"",
+      "default": "0",
+      "description": "Espaçamento entre as células, na escala do Tailwind."
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "Classes utilitárias extras, ex. um grid-template exótico. Permitido apenas em primitivos de layout (VStack, HStack, Grid) por AD-007."
+    }
+  ],
+  "variants": {
+    "gap": [
+      "0",
+      "0.5",
+      "1",
+      "1.5",
+      "2",
+      "2.5",
+      "3",
+      "3.5",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "12",
+      "14",
+      "16",
+      "20",
+      "24"
+    ]
+  },
+  "tokensUsed": [],
+  "examples": [
+    {
+      "title": "Grid de 3 colunas",
+      "code": "<Grid cols={3} gap=\"4\">\n  <Card />\n  <Card />\n  <Card />\n</Grid>"
+    },
+    {
+      "title": "Grid responsivo",
+      "code": "<Grid cols={{ base: 1, md: 2, lg: 4 }} gap=\"6\">\n  <Card />\n  <Card />\n  <Card />\n  <Card />\n</Grid>"
+    },
+    {
+      "title": "Template exótico via className",
+      "code": "<Grid className=\"grid-cols-[1fr_2fr]\" gap=\"4\">\n  <aside />\n  <main />\n</Grid>"
+    }
+  ],
+  "dos": [
+    "Use cols responsivo para adaptar o número de colunas por breakpoint.",
+    "Use className apenas para grid-templates que a prop cols não cobre (ex. colunas com frações).",
+    "Combine com gap para espaçamento consistente entre as células."
+  ],
+  "donts": [
+    "Não use className para introduzir cores ou bordas — isso é responsabilidade de componentes estilizados como Card.",
+    "Não abuse de className quando cols já resolve o layout.",
+    "Não defina role — Grid não é focável nem tem semântica de widget por padrão."
+  ],
+  "analytics": {
+    "analyticsDefault": "off",
+    "supportedEvents": [],
+    "piiRisk": "low"
+  }
+}
