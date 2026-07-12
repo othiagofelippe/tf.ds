@@ -1,0 +1,39 @@
+{
+  "name": "tfds-mcp",
+  "version": "0.0.0",
+  "description": "MCP server for the tf.ds design system — components, tokens and guardrails for AI agents",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "tfds-mcp": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "lint": "eslint src",
+    "type-check": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@tfds/eslint-config": "workspace:*",
+    "@tfds/tsconfig": "workspace:*",
+    "@types/node": "^24.0.0",
+    "eslint": "^9.0.0",
+    "tsup": "^8.5.0",
+    "vitest": "^3.2.0"
+  }
+}
