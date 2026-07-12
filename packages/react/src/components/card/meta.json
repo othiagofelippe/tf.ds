@@ -1,0 +1,48 @@
+{
+  "name": "Card",
+  "componentName": "card",
+  "status": "experimental",
+  "description": "Componente de superfície (bg/border/radius/padding) para agrupar conteúdo relacionado. Sem animação — motion fica a cargo do consumidor.",
+  "props": [
+    {
+      "name": "shadow",
+      "type": "\"none\" | \"sm\" | \"md\"",
+      "default": "sm",
+      "description": "Elevação visual via box-shadow."
+    },
+    {
+      "name": "padding",
+      "type": "\"none\" | \"sm\" | \"md\" | \"lg\"",
+      "default": "md",
+      "description": "Espaçamento interno do conteúdo."
+    }
+  ],
+  "variants": {
+    "shadow": ["none", "sm", "md"],
+    "padding": ["none", "sm", "md", "lg"]
+  },
+  "tokensUsed": ["color.surface.default", "color.border.default"],
+  "examples": [
+    {
+      "title": "Card padrão",
+      "code": "<Card>\n  <Typography variant=\"heading-sm\">Title</Typography>\n  <Typography variant=\"body-md\">Description</Typography>\n</Card>"
+    },
+    {
+      "title": "Card sem sombra e sem padding",
+      "code": "<Card shadow=\"none\" padding=\"none\">\n  <img src=\"/cover.jpg\" alt=\"Cover\" />\n</Card>"
+    }
+  ],
+  "dos": [
+    "Use Card para agrupar conteúdo relacionado com uma superfície visual distinta.",
+    "Combine com Grid ou VStack/HStack para layouts de múltiplos cards."
+  ],
+  "donts": [
+    "Não use Card apenas para espaçamento — use VStack/HStack para isso.",
+    "Não adicione animação diretamente no Card — isso é responsabilidade do consumidor."
+  ],
+  "analytics": {
+    "analyticsDefault": "off",
+    "supportedEvents": [],
+    "piiRisk": "low"
+  }
+}
