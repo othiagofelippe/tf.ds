@@ -91,6 +91,16 @@ describe("HStack", () => {
     })
   })
 
+  describe("className", () => {
+    it("merges custom className with CVA classes", () => {
+      render(<HStack className="ml-8">Content</HStack>)
+      const element = screen.getByText("Content")
+      expect(element.className).toContain("ml-8")
+      expect(element.className).toContain("flex")
+      expect(element.className).toContain("flex-row")
+    })
+  })
+
   describe("forwardRef", () => {
     it("forwards ref to the underlying DOM element", () => {
       const ref = createRef<HTMLElement>()

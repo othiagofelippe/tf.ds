@@ -1,0 +1,96 @@
+{
+  "name": "HStack",
+  "componentName": "hstack",
+  "status": "experimental",
+  "description": "Primitivo de layout que alinha filhos horizontalmente com flexbox. Expõe gap, align, justify e wrap. Como primitivo de layout (AD-007), aceita className para composição — exceção à regra props-only do design system.",
+  "props": [
+    {
+      "name": "as",
+      "type": "\"div\" | \"section\" | \"article\" | \"aside\" | \"nav\" | \"header\" | \"footer\" | \"main\" | \"ul\" | \"ol\"",
+      "default": "div",
+      "description": "Elemento HTML semântico renderizado."
+    },
+    {
+      "name": "gap",
+      "type": "\"0\" | \"0.5\" | \"1\" | \"1.5\" | \"2\" | \"2.5\" | \"3\" | \"3.5\" | \"4\" | \"5\" | \"6\" | \"7\" | \"8\" | \"9\" | \"10\" | \"12\" | \"14\" | \"16\" | \"20\" | \"24\"",
+      "default": "0",
+      "description": "Espaçamento entre os filhos, na escala do Tailwind."
+    },
+    {
+      "name": "align",
+      "type": "\"start\" | \"center\" | \"end\" | \"stretch\"",
+      "default": "stretch",
+      "description": "Alinhamento no eixo transversal (align-items)."
+    },
+    {
+      "name": "justify",
+      "type": "\"start\" | \"center\" | \"end\" | \"between\" | \"around\"",
+      "default": "start",
+      "description": "Distribuição no eixo principal (justify-content)."
+    },
+    {
+      "name": "wrap",
+      "type": "boolean",
+      "default": "false",
+      "description": "Permite quebra de linha dos filhos (flex-wrap)."
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "Classes utilitárias extras. Permitido apenas em primitivos de layout (VStack, HStack, Grid) por AD-007."
+    }
+  ],
+  "variants": {
+    "gap": [
+      "0",
+      "0.5",
+      "1",
+      "1.5",
+      "2",
+      "2.5",
+      "3",
+      "3.5",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "12",
+      "14",
+      "16",
+      "20",
+      "24"
+    ],
+    "align": ["start", "center", "end", "stretch"],
+    "justify": ["start", "center", "end", "between", "around"],
+    "wrap": ["true", "false"]
+  },
+  "tokensUsed": [],
+  "examples": [
+    {
+      "title": "Alinhar horizontalmente com espaçamento",
+      "code": "<HStack gap=\"4\" align=\"center\">\n  <Badge>Novo</Badge>\n  <Typography>Título</Typography>\n</HStack>"
+    },
+    {
+      "title": "Toolbar com wrap",
+      "code": "<HStack gap=\"2\" wrap>\n  <Button>Um</Button>\n  <Button>Dois</Button>\n  <Button>Três</Button>\n</HStack>"
+    }
+  ],
+  "dos": [
+    "Use HStack para alinhamento horizontal em vez de aplicar flex-row manualmente.",
+    "Habilite wrap quando os filhos puderem exceder a largura disponível.",
+    "Use className apenas para ajustes de layout (margem, largura), não para estilizar a superfície."
+  ],
+  "donts": [
+    "Não use HStack para empilhamento vertical — use VStack.",
+    "Não use className para introduzir cores ou bordas — isso é responsabilidade de componentes estilizados como Card.",
+    "Não defina role — HStack não é focável nem tem semântica de widget por padrão."
+  ],
+  "analytics": {
+    "analyticsDefault": "off",
+    "supportedEvents": [],
+    "piiRisk": "low"
+  }
+}
