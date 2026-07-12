@@ -95,4 +95,17 @@ describe("Button", () => {
       expect(ref.current).toBeInstanceOf(HTMLButtonElement)
     })
   })
+
+  describe("focus", () => {
+    it("receives keyboard focus", async () => {
+      render(<Button>Click me</Button>)
+      await userEvent.tab()
+      expect(screen.getByRole("button")).toHaveFocus()
+    })
+
+    it("has a visible focus ring class", () => {
+      render(<Button>Click me</Button>)
+      expect(screen.getByRole("button").className).toContain("focus-visible:ring-interactive-focus")
+    })
+  })
 })

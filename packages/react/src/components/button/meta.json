@@ -1,0 +1,85 @@
+{
+  "name": "Button",
+  "componentName": "button",
+  "status": "experimental",
+  "description": "Componente de ação primária do tf.ds. Suporta 6 variantes, 4 tamanhos e estados de loading e disabled, com foco visível nos três temas.",
+  "props": [
+    {
+      "name": "variant",
+      "type": "\"primary\" | \"secondary\" | \"outline\" | \"ghost\" | \"destructive\" | \"link\"",
+      "default": "primary",
+      "description": "Variante visual do botão."
+    },
+    {
+      "name": "size",
+      "type": "\"sm\" | \"md\" | \"lg\" | \"icon\"",
+      "default": "md",
+      "description": "Tamanho do botão."
+    },
+    {
+      "name": "loading",
+      "type": "boolean",
+      "default": "false",
+      "description": "Estado de carregamento — desabilita o botão e aplica aria-busy."
+    },
+    {
+      "name": "loadingLabel",
+      "type": "string",
+      "default": "Loading...",
+      "description": "Label para leitores de tela no estado loading."
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "default": "false",
+      "description": "Desabilita o botão."
+    }
+  ],
+  "variants": {
+    "variant": ["primary", "secondary", "outline", "ghost", "destructive", "link"],
+    "size": ["sm", "md", "lg", "icon"]
+  },
+  "tokensUsed": [
+    "color.action.primary",
+    "color.action.primary.hover",
+    "color.text.on-brand",
+    "color.text.primary",
+    "color.bg.subtle",
+    "color.bg.muted",
+    "color.border.default",
+    "color.feedback.error",
+    "color.interactive.focus",
+    "opacity.disabled",
+    "opacity.loading",
+    "duration.fast"
+  ],
+  "examples": [
+    {
+      "title": "Botão primário",
+      "code": "<Button>Salvar</Button>"
+    },
+    {
+      "title": "Estado de loading",
+      "code": "<Button loading loadingLabel=\"Salvando...\">Salvar</Button>"
+    },
+    {
+      "title": "Variante destrutiva",
+      "code": "<Button variant=\"destructive\">Excluir</Button>"
+    }
+  ],
+  "dos": [
+    "Use uma única ação primária por seção para guiar o usuário.",
+    "Forneça loadingLabel descritivo quando usar o estado loading.",
+    "Use size=\"icon\" com aria-label para botões apenas com ícone."
+  ],
+  "donts": [
+    "Não use className para sobrescrever estilos — use as props declaradas.",
+    "Não empilhe múltiplos botões primary competindo pela mesma atenção.",
+    "Não use o botão para navegação — prefira um link semântico."
+  ],
+  "analytics": {
+    "analyticsDefault": "off",
+    "supportedEvents": ["component_click"],
+    "piiRisk": "low"
+  }
+}

@@ -4,29 +4,22 @@ import { cn } from "../../lib/cn"
 import { buttonVariants } from "./button.variants"
 
 interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
+  extends
+    Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "className">,
+    VariantProps<typeof buttonVariants> {
   loading?: boolean
   loadingLabel?: string
 }
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
-    {
-      className,
-      variant,
-      size,
-      loading = false,
-      loadingLabel = "Loading...",
-      disabled,
-      children,
-      ...props
-    },
+    { variant, size, loading = false, loadingLabel = "Loading...", disabled, children, ...props },
     ref,
   ) => {
     return (
       <button
         ref={ref}
-        className={cn(buttonVariants({ variant, size }), className)}
+        className={cn(buttonVariants({ variant, size }))}
         disabled={disabled ?? loading}
         aria-busy={loading}
         aria-label={loading ? loadingLabel : undefined}
