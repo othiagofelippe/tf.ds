@@ -2,6 +2,13 @@ import js from "@eslint/js";
 import reactPlugin from "eslint-plugin-react";
 import reactHooksPlugin from "eslint-plugin-react-hooks";
 import tseslint from "typescript-eslint";
+import { noNativeTag } from "./rules/no-native-tag.js";
+
+const tfdsPlugin = {
+  rules: {
+    "no-native-tag": noNativeTag,
+  },
+};
 
 export default tseslint.config(
   js.configs.recommended,
@@ -11,6 +18,7 @@ export default tseslint.config(
     plugins: {
       react: reactPlugin,
       "react-hooks": reactHooksPlugin,
+      tfds: tfdsPlugin,
     },
     rules: {
       ...reactPlugin.configs.recommended.rules,
@@ -23,6 +31,7 @@ export default tseslint.config(
         { prefer: "type-imports" },
       ],
       "@typescript-eslint/no-non-null-assertion": "error",
+      "tfds/no-native-tag": "error",
     },
     settings: {
       react: { version: "detect" },

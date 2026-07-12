@@ -6,12 +6,20 @@
   "type": "module",
   "main": "index.js",
   "files": [
-    "*.js"
+    "*.js",
+    "rules/*.js"
   ],
+  "scripts": {
+    "test": "vitest run"
+  },
   "dependencies": {
     "@eslint/js": "^9.0.0",
     "eslint-plugin-react": "^7.37.0",
     "eslint-plugin-react-hooks": "^5.0.0",
     "typescript-eslint": "^8.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.0.0",
+    "vitest": "^3.2.0"
   }
 }
