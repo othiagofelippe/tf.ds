@@ -42,7 +42,7 @@ describe("bundle-data + loadBundledData", () => {
   it("bundles guardrails with the native-tag matrix and exceptions", () => {
     const data = loadBundledData(outDir)
     const rule = data.guardrails.rules.find((r) => r.id === "no-native-tag")
-    expect(rule?.matrix["button"]).toEqual(["Button"])
+    expect(rule?.matrix.button).toEqual(["Button"])
     expect(rule?.exceptions).toEqual(["a", "img", "li", "svg", "form", "table"])
   })
 

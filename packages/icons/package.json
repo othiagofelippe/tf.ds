@@ -38,6 +38,7 @@
   "devDependencies": {
     "@tfds/eslint-config": "workspace:*",
     "@tfds/tsconfig": "workspace:*",
+    "@types/node": "^24.0.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "esbuild": "^0.25.0",

@@ -9,7 +9,16 @@ import type { TrackAdapter } from "./types"
 
 function TrackedButton({ componentName = "button" }: { componentName?: string }): ReactNode {
   const { emit } = useAnalytics({ componentName })
-  return <button onClick={() => emit("component_click")}>Click me</button>
+  return (
+    // eslint-disable-next-line tfds/no-native-tag -- @tfds/analytics can't depend on @tfds/react (circular)
+    <button
+      onClick={() => {
+        emit("component_click")
+      }}
+    >
+      Click me
+    </button>
+  )
 }
 
 describe("useAnalytics", () => {
@@ -65,7 +74,16 @@ describe("useAnalytics", () => {
     const adapter: TrackAdapter = vi.fn()
     function OverridingButton(): ReactNode {
       const { emit } = useAnalytics({ componentName: "button", screenName: "checkout" })
-      return <button onClick={() => emit("component_click")}>Click me</button>
+      return (
+        // eslint-disable-next-line tfds/no-native-tag -- @tfds/analytics can't depend on @tfds/react (circular)
+        <button
+          onClick={() => {
+            emit("component_click")
+          }}
+        >
+          Click me
+        </button>
+      )
     }
 
     render(

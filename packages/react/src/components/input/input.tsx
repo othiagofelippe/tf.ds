@@ -41,6 +41,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     }
 
     return (
+      // eslint-disable-next-line tfds/no-native-tag -- this is the primitive the rule points consumers to
       <input
         ref={ref}
         className={cn(inputVariants({ size, status }))}

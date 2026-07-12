@@ -37,7 +37,7 @@ describe("list_components", () => {
     const result = await client.callTool({ name: "list_components", arguments: {} })
     const parsed = JSON.parse(textOf(result)) as {
       dsVersions: Record<string, string>
-      components: Array<{ name: string; status: string }>
+      components: { name: string; status: string }[]
     }
     expect(parsed.components).toHaveLength(9)
     expect(parsed.components.map((c) => c.name)).toContain("Button")
@@ -77,7 +77,7 @@ describe("search_tokens", () => {
     })
     const parsed = JSON.parse(textOf(result)) as {
       total: number
-      matches: Array<{ theme: string; token: string; value: string }>
+      matches: { theme: string; token: string; value: string }[]
     }
     expect(parsed.total).toBeGreaterThan(0)
     for (const match of parsed.matches) {
@@ -92,7 +92,7 @@ describe("search_tokens", () => {
       name: "search_tokens",
       arguments: { query: "color.text.primary" },
     })
-    const parsed = JSON.parse(textOf(result)) as { matches: Array<{ theme: string }> }
+    const parsed = JSON.parse(textOf(result)) as { matches: { theme: string }[] }
     const themes = new Set(parsed.matches.map((m) => m.theme))
     expect(themes).toEqual(new Set(["light", "dark", "ocean-sunset"]))
   })
@@ -112,10 +112,10 @@ describe("get_guardrails", () => {
   it("returns the native-tag matrix and exceptions", async () => {
     const result = await client.callTool({ name: "get_guardrails", arguments: {} })
     const parsed = JSON.parse(textOf(result)) as {
-      rules: Array<{ id: string; matrix: Record<string, string[]>; exceptions: string[] }>
+      rules: { id: string; matrix: Record<string, string[]>; exceptions: string[] }[]
     }
     const rule = parsed.rules.find((r) => r.id === "no-native-tag")
-    expect(rule?.matrix["button"]).toEqual(["Button"])
+    expect(rule?.matrix.button).toEqual(["Button"])
     expect(rule?.exceptions).toEqual(["a", "img", "li", "svg", "form", "table"])
   })
 })

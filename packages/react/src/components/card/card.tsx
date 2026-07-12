@@ -12,6 +12,7 @@ interface CardProps
 const Card = forwardRef<HTMLDivElement, CardProps>(
   ({ shadow, padding, children, ...props }, ref) => {
     return (
+      // eslint-disable-next-line tfds/no-native-tag -- surface primitive, not a layout stack
       <div ref={ref} className={cn(cardVariants({ shadow, padding }))} {...props}>
         {children}
       </div>

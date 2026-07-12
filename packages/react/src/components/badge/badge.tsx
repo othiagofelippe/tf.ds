@@ -12,6 +12,7 @@ interface BadgeProps
 const Badge = forwardRef<HTMLSpanElement, BadgeProps>(
   ({ variant, size, children, ...props }, ref) => {
     return (
+      // eslint-disable-next-line tfds/no-native-tag -- inline surface, not running text (Typography)
       <span ref={ref} className={cn(badgeVariants({ variant, size }))} {...props}>
         {children}
       </span>

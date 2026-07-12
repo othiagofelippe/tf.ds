@@ -4,7 +4,7 @@ import type { BundledData, ComponentMeta, TokenTree } from "./data"
 
 interface ToolText {
   [key: string]: unknown
-  content: Array<{ [key: string]: unknown; type: "text"; text: string }>
+  content: { [key: string]: unknown; type: "text"; text: string }[]
   isError?: boolean
 }
 
@@ -28,11 +28,8 @@ function unknownComponent(data: BundledData, name: string): ToolText {
   return errorResult(`Unknown component "${name}". Valid components: ${valid}`)
 }
 
-export function flattenTokens(
-  tree: TokenTree,
-  prefix = "",
-): Array<{ token: string; value: string }> {
-  const entries: Array<{ token: string; value: string }> = []
+export function flattenTokens(tree: TokenTree, prefix = ""): { token: string; value: string }[] {
+  const entries: { token: string; value: string }[] = []
   for (const [key, value] of Object.entries(tree)) {
     const path = prefix ? `${prefix}.${key}` : key
     if (typeof value === "string") {

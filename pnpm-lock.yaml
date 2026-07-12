@@ -215,6 +215,9 @@ importers:
       "@tfds/tsconfig":
         specifier: workspace:*
         version: link:../tsconfig
+      "@types/node":
+        specifier: ^24.0.0
+        version: 24.13.3
       "@types/react":
         specifier: ^19.0.0
         version: 19.2.14

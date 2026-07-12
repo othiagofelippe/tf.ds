@@ -46,6 +46,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     }
 
     return (
+      // eslint-disable-next-line tfds/no-native-tag -- this is the primitive the rule points consumers to
       <button
         ref={ref}
         className={cn(buttonVariants({ variant, size }))}

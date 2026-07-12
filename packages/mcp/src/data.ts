@@ -17,7 +17,7 @@ export interface ComponentMeta {
   props: ComponentMetaProp[]
   variants: Record<string, string[]>
   tokensUsed: string[]
-  examples: Array<{ title: string; code: string }>
+  examples: { title: string; code: string }[]
   dos: string[]
   donts: string[]
   analytics: {
@@ -40,7 +40,9 @@ export interface Guardrails {
   rules: GuardrailRule[]
 }
 
-export type TokenTree = { [key: string]: string | TokenTree }
+export interface TokenTree {
+  [key: string]: string | TokenTree
+}
 
 export interface DataManifest {
   dsVersions: Record<string, string>
@@ -55,6 +57,7 @@ export interface BundledData {
   guardrails: Guardrails
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unnecessary-type-parameters -- T is the point: an explicit cast helper for JSON.parse
 function readJson<T>(path: string): T {
   return JSON.parse(readFileSync(path, "utf8")) as T
 }

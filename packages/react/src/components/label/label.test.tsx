@@ -19,6 +19,7 @@ describe("Label", () => {
       render(
         <>
           <Label htmlFor="email">Email</Label>
+          {/* eslint-disable-next-line tfds/no-native-tag -- testing htmlFor association with a real DOM input */}
           <input id="email" />
         </>,
       )

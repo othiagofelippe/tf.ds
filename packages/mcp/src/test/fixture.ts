@@ -12,7 +12,9 @@ export function createTestData(): { data: BundledData; cleanup: () => void } {
   bundleData({ repoRoot: join(__dirname, "..", "..", "..", ".."), outDir })
   return {
     data: loadBundledData(outDir),
-    cleanup: () => rmSync(outDir, { recursive: true, force: true }),
+    cleanup: () => {
+      rmSync(outDir, { recursive: true, force: true })
+    },
   }
 }
 
@@ -25,9 +27,9 @@ export async function createTestClient(data: BundledData): Promise<Client> {
 }
 
 export function textOf(result: unknown): string {
-  const content = (result as { content?: Array<{ type: string; text: string }> }).content
+  const content = (result as { content?: { type: string; text: string }[] }).content
   const first = content?.[0]
-  if (!first || first.type !== "text") {
+  if (first?.type !== "text") {
     throw new Error("expected text content")
   }
   return first.text

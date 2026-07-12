@@ -1,4 +1,5 @@
-import { McpServer, ResourceTemplate } from "@modelcontextprotocol/sdk/server/mcp.js"
+import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js"
+import { ResourceTemplate } from "@modelcontextprotocol/sdk/server/mcp.js"
 import type { BundledData } from "./data"
 
 function jsonContents(uri: string, value: unknown) {
@@ -20,7 +21,7 @@ export function registerResources(server: McpServer, data: BundledData): void {
     }),
     { description: "Registry entry (meta.json) of a tf.ds component" },
     (uri, variables) => {
-      const name = String(variables["name"])
+      const name = String(variables.name)
       const component = data.components.find((c) => c.componentName === name)
       if (!component) {
         throw new Error(
@@ -45,7 +46,7 @@ export function registerResources(server: McpServer, data: BundledData): void {
     }),
     { description: "Resolved design tokens per theme" },
     (uri, variables) => {
-      const theme = String(variables["theme"])
+      const theme = String(variables.theme)
       const tree = data.tokens[theme]
       if (!tree) {
         throw new Error(`Unknown theme "${theme}". Valid: ${Object.keys(data.tokens).join(", ")}`)

@@ -20,7 +20,7 @@ afterAll(async () => {
 })
 
 function firstText(result: unknown): string {
-  const text = (result as { contents?: Array<{ text?: unknown }> }).contents?.[0]?.text
+  const text = (result as { contents?: { text?: unknown }[] }).contents?.[0]?.text
   if (typeof text !== "string") throw new Error("expected text resource contents")
   return text
 }
@@ -46,7 +46,7 @@ describe("resources (MCP-04)", () => {
   it("reads resolved tokens for a theme", async () => {
     const result = await client.readResource({ uri: "tfds://tokens/ocean-sunset" })
     const parsed = JSON.parse(firstText(result)) as Record<string, unknown>
-    expect(parsed["color"]).toBeDefined()
+    expect(parsed.color).toBeDefined()
   })
 
   it("reads the manifest with the DS versions", async () => {

@@ -12,6 +12,7 @@ interface LabelProps
 const Label = forwardRef<HTMLLabelElement, LabelProps>(
   ({ size, disabled, children, ...props }, ref) => {
     return (
+      // eslint-disable-next-line tfds/no-native-tag -- this is the primitive the rule points consumers to
       <label ref={ref} className={cn(labelVariants({ size, disabled }))} {...props}>
         {children}
       </label>
