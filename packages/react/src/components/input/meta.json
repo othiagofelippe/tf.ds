@@ -1,0 +1,81 @@
+{
+  "name": "Input",
+  "componentName": "input",
+  "status": "experimental",
+  "description": "Campo de entrada de texto do tf.ds. Renderiza um <input> nativo com três tamanhos, status de validação e foco visível nos três temas.",
+  "props": [
+    {
+      "name": "size",
+      "type": "\"sm\" | \"md\" | \"lg\"",
+      "default": "md",
+      "description": "Tamanho do campo."
+    },
+    {
+      "name": "status",
+      "type": "\"default\" | \"error\" | \"success\"",
+      "default": "default",
+      "description": "Status de validação do campo."
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "default": "false",
+      "description": "Desabilita o campo."
+    },
+    {
+      "name": "placeholder",
+      "type": "string",
+      "description": "Texto de placeholder exibido quando vazio."
+    }
+  ],
+  "variants": {
+    "size": ["sm", "md", "lg"],
+    "status": ["default", "error", "success"]
+  },
+  "tokensUsed": [
+    "font.family.sans",
+    "font.weight.regular",
+    "font.size.sm",
+    "font.size.md",
+    "color.surface.default",
+    "color.text.primary",
+    "color.text.disabled",
+    "color.text.error",
+    "color.border.default",
+    "color.border.strong",
+    "color.feedback.error",
+    "color.feedback.success",
+    "color.interactive.focus",
+    "opacity.disabled",
+    "duration.fast"
+  ],
+  "examples": [
+    {
+      "title": "Campo padrão",
+      "code": "<Input aria-label=\"Nome\" placeholder=\"Digite seu nome\" />"
+    },
+    {
+      "title": "Campo com erro",
+      "code": "<Input aria-label=\"Email\" status=\"error\" />"
+    },
+    {
+      "title": "Campo associado a um rótulo",
+      "code": "<Label htmlFor=\"email\">Email</Label>\n<Input id=\"email\" />"
+    }
+  ],
+  "dos": [
+    "Sempre forneça um rótulo acessível via <Label htmlFor> ou aria-label.",
+    "Use status=\"error\" junto de uma mensagem de erro visível para o usuário.",
+    "Escolha o size coerente com a densidade do formulário."
+  ],
+  "donts": [
+    "Não use className para sobrescrever estilos — use as props declaradas.",
+    "Não dependa só do status de cor — combine com mensagem textual.",
+    "Não use placeholder como substituto do rótulo."
+  ],
+  "analytics": {
+    "analyticsDefault": "off",
+    "supportedEvents": ["component_change"],
+    "piiRisk": "medium"
+  }
+}

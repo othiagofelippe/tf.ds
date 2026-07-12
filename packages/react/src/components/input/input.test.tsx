@@ -74,4 +74,19 @@ describe("Input", () => {
       expect(ref.current).toBeInstanceOf(HTMLInputElement)
     })
   })
+
+  describe("focus", () => {
+    it("receives keyboard focus", async () => {
+      render(<Input aria-label="Name" />)
+      await userEvent.tab()
+      expect(screen.getByRole("textbox")).toHaveFocus()
+    })
+
+    it("has a visible focus ring class", () => {
+      render(<Input aria-label="Name" />)
+      expect(screen.getByRole("textbox").className).toContain(
+        "focus-visible:ring-interactive-focus",
+      )
+    })
+  })
 })

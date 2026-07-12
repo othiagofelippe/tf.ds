@@ -5,15 +5,13 @@ import { inputVariants } from "./input.variants"
 
 interface InputProps
   extends
-    Omit<React.InputHTMLAttributes<HTMLInputElement>, "size">,
+    Omit<React.InputHTMLAttributes<HTMLInputElement>, "size" | "className">,
     VariantProps<typeof inputVariants> {}
 
 /** @experimental */
-const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ size, status, className, ...props }, ref) => {
-    return <input ref={ref} className={cn(inputVariants({ size, status }), className)} {...props} />
-  },
-)
+const Input = forwardRef<HTMLInputElement, InputProps>(({ size, status, ...props }, ref) => {
+  return <input ref={ref} className={cn(inputVariants({ size, status }))} {...props} />
+})
 
 Input.displayName = "Input"
 
