@@ -18,7 +18,7 @@ const preview: Preview = {
       themes: {
         Light: "",
         Dark: "dark",
-        Ocean: "ocean",
+        "Ocean Sunset": "ocean-sunset",
       },
       defaultTheme: "Light",
       parentSelector: "html",
