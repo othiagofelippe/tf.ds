@@ -25,18 +25,18 @@ type TypographyElement =
 
 interface TypographyProps
   extends
-    Omit<React.HTMLAttributes<HTMLElement>, "color">,
+    Omit<React.HTMLAttributes<HTMLElement>, "color" | "className">,
     VariantProps<typeof typographyVariants> {
   as?: TypographyElement
 }
 
 /** @experimental */
 const Typography = forwardRef<HTMLElement, TypographyProps>(
-  ({ as: Tag = "p", variant, color, align, truncate, className, children, ...props }, ref) => {
+  ({ as: Tag = "p", variant, color, align, truncate, children, ...props }, ref) => {
     return (
       <Tag
         ref={ref as React.RefCallback<HTMLElement>}
-        className={cn(typographyVariants({ variant, color, align, truncate }), className)}
+        className={cn(typographyVariants({ variant, color, align, truncate }))}
         {...props}
       >
         {children}
