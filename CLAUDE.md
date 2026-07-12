@@ -68,6 +68,10 @@ A component is `stable` when it has: stories (all variants/states), Controls, Do
 - No `console.log` in committed code
 - Conventional Commits: `feat|fix|chore|refactor|docs|test(scope): description`
 
+## Scaffolding
+
+- `/new-component` — generates a component's full v2 file scaffold (tsx, variants, test, stories, meta.json) directly, once the API is already decided. For the full spec-driven flow (requirements/design/tasks), use `/create-component` instead.
+
 ## Key Files
 
 - Token source: `packages/tokens/src/`
