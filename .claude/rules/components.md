@@ -1,6 +1,6 @@
 ---
 description: Regras específicas para desenvolvimento de componentes React no tf.ds
-paths: packages/components/src/components/**
+paths: packages/react/src/components/**
 ---
 
 ## Padrões obrigatórios para componentes tf.ds
@@ -18,4 +18,4 @@ paths: packages/components/src/components/**
 - `aria-busy` em estado `loading`
 - Elemento HTML semântico correto — `role` só quando necessário
 
-Referência de implementação: `packages/components/src/components/button/`
+Referência de implementação: `packages/react/src/components/button/`

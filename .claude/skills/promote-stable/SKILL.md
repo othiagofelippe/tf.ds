@@ -31,7 +31,7 @@ Se algum item estiver desmarcado: liste o que falta e **pare aqui**.
 
 ```bash
 pnpm test
-pnpm --filter @tfds/components build
+pnpm --filter @tfds/react build
 ```
 
 Se algum comando falhar: reporte o erro e **pare aqui**.
@@ -52,7 +52,7 @@ Em `docs/specs/<name-lowercase>/requirements.md`:
 pnpm changeset
 ```
 
-Selecione `@tfds/components`, bump `minor`, descreva a promoção:
+Selecione `@tfds/react`, bump `minor`, descreva a promoção:
 
 > `feat(components): promote <name> to stable`
 

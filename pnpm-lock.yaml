@@ -37,9 +37,9 @@ importers:
 
   apps/docs:
     dependencies:
-      "@tfds/components":
+      "@tfds/react":
         specifier: workspace:*
-        version: link:../../packages/components
+        version: link:../../packages/react
       "@tfds/tokens":
         specifier: workspace:*
         version: link:../../packages/tokens
@@ -92,9 +92,9 @@ importers:
       "@fontsource/roboto-mono":
         specifier: ^5.0.0
         version: 5.2.8
-      "@tfds/components":
+      "@tfds/react":
         specifier: workspace:*
-        version: link:../../packages/components
+        version: link:../../packages/react
       "@tfds/tokens":
         specifier: workspace:*
         version: link:../../packages/tokens
@@ -133,7 +133,59 @@ importers:
         specifier: ^6.3.5
         version: 6.4.2(@types/node@25.6.0)(jiti@2.6.1)(lightningcss@1.32.0)(tsx@4.22.1)(yaml@2.8.4)
 
-  packages/components:
+  packages/eslint-config:
+    dependencies:
+      "@eslint/js":
+        specifier: ^9.0.0
+        version: 9.39.4
+      eslint-plugin-react:
+        specifier: ^7.37.0
+        version: 7.37.5(eslint@9.39.4(jiti@2.6.1))
+      eslint-plugin-react-hooks:
+        specifier: ^5.0.0
+        version: 5.2.0(eslint@9.39.4(jiti@2.6.1))
+      typescript-eslint:
+        specifier: ^8.0.0
+        version: 8.59.1(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3)
+
+  packages/icons:
+    dependencies:
+      lucide-react:
+        specifier: ^0.511.0
+        version: 0.511.0(react@19.2.5)
+      react:
+        specifier: ">=18.0.0"
+        version: 19.2.5
+      react-dom:
+        specifier: ">=18.0.0"
+        version: 19.2.5(react@19.2.5)
+    devDependencies:
+      "@tfds/eslint-config":
+        specifier: workspace:*
+        version: link:../eslint-config
+      "@tfds/tsconfig":
+        specifier: workspace:*
+        version: link:../tsconfig
+      "@types/react":
+        specifier: ^19.0.0
+        version: 19.2.14
+      "@types/react-dom":
+        specifier: ^19.0.0
+        version: 19.2.3(@types/react@19.2.14)
+      esbuild:
+        specifier: ^0.25.0
+        version: 0.25.12
+      eslint:
+        specifier: ^9.0.0
+        version: 9.39.4(jiti@2.6.1)
+      tsup:
+        specifier: ^8.5.0
+        version: 8.5.1(jiti@2.6.1)(postcss@8.5.13)(tsx@4.22.1)(typescript@5.9.3)(yaml@2.8.4)
+      tsx:
+        specifier: ^4.0.0
+        version: 4.22.1
+
+  packages/react:
     dependencies:
       "@radix-ui/react-slot":
         specifier: ^1.2.3
@@ -190,58 +242,6 @@ importers:
       vitest:
         specifier: ^3.2.0
         version: 3.2.4(@types/node@25.6.0)(jiti@2.6.1)(jsdom@26.1.0)(lightningcss@1.32.0)(tsx@4.22.1)(yaml@2.8.4)
-
-  packages/eslint-config:
-    dependencies:
-      "@eslint/js":
-        specifier: ^9.0.0
-        version: 9.39.4
-      eslint-plugin-react:
-        specifier: ^7.37.0
-        version: 7.37.5(eslint@9.39.4(jiti@2.6.1))
-      eslint-plugin-react-hooks:
-        specifier: ^5.0.0
-        version: 5.2.0(eslint@9.39.4(jiti@2.6.1))
-      typescript-eslint:
-        specifier: ^8.0.0
-        version: 8.59.1(eslint@9.39.4(jiti@2.6.1))(typescript@5.9.3)
-
-  packages/icons:
-    dependencies:
-      lucide-react:
-        specifier: ^0.511.0
-        version: 0.511.0(react@19.2.5)
-      react:
-        specifier: ">=18.0.0"
-        version: 19.2.5
-      react-dom:
-        specifier: ">=18.0.0"
-        version: 19.2.5(react@19.2.5)
-    devDependencies:
-      "@tfds/eslint-config":
-        specifier: workspace:*
-        version: link:../eslint-config
-      "@tfds/tsconfig":
-        specifier: workspace:*
-        version: link:../tsconfig
-      "@types/react":
-        specifier: ^19.0.0
-        version: 19.2.14
-      "@types/react-dom":
-        specifier: ^19.0.0
-        version: 19.2.3(@types/react@19.2.14)
-      esbuild:
-        specifier: ^0.25.0
-        version: 0.25.12
-      eslint:
-        specifier: ^9.0.0
-        version: 9.39.4(jiti@2.6.1)
-      tsup:
-        specifier: ^8.5.0
-        version: 8.5.1(jiti@2.6.1)(postcss@8.5.13)(tsx@4.22.1)(typescript@5.9.3)(yaml@2.8.4)
-      tsx:
-        specifier: ^4.0.0
-        version: 4.22.1
 
   packages/tokens:
     devDependencies:

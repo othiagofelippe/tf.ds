@@ -19,7 +19,7 @@ const config: StorybookConfig = {
     config.resolve.alias = {
       ...config.resolve.alias,
       // Import components from source in dev — no build step required
-      "@tfds/components": path.resolve(__dirname, "../../../packages/components/src/index.ts"),
+      "@tfds/react": path.resolve(__dirname, "../../../packages/react/src/index.ts"),
     }
     return config
   },

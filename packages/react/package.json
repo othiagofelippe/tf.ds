@@ -1,5 +1,5 @@
 {
-  "name": "@tfds/components",
+  "name": "@tfds/react",
   "version": "0.0.1",
   "description": "React components for tf.ds",
   "license": "MIT",

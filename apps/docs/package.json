@@ -9,7 +9,7 @@
     "preview": "serve storybook-static"
   },
   "dependencies": {
-    "@tfds/components": "workspace:*",
+    "@tfds/react": "workspace:*",
     "@tfds/tokens": "workspace:*"
   },
   "devDependencies": {

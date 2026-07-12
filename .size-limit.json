@@ -1,12 +1,12 @@
 [
   {
-    "name": "@tfds/components (ESM)",
-    "path": "packages/components/dist/index.js",
+    "name": "@tfds/react (ESM)",
+    "path": "packages/react/dist/index.js",
     "limit": "50 kB"
   },
   {
-    "name": "@tfds/components (CJS)",
-    "path": "packages/components/dist/index.cjs",
+    "name": "@tfds/react (CJS)",
+    "path": "packages/react/dist/index.cjs",
     "limit": "50 kB"
   },
   {

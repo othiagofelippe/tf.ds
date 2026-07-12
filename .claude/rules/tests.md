@@ -1,6 +1,6 @@
 ---
 description: Regras para escrever testes de componentes no tf.ds
-paths: packages/components/src/**/*.test.{ts,tsx}
+paths: packages/react/src/**/*.test.{ts,tsx}
 ---
 
 ## Padrões obrigatórios para testes tf.ds

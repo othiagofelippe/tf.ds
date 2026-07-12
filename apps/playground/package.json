@@ -12,7 +12,7 @@
     "@fontsource/poppins": "^5.0.0",
     "@fontsource/roboto": "^5.0.0",
     "@fontsource/roboto-mono": "^5.0.0",
-    "@tfds/components": "workspace:*",
+    "@tfds/react": "workspace:*",
     "@tfds/tokens": "workspace:*",
     "lucide-react": "^0.511.0",
     "react": "^19.0.0",

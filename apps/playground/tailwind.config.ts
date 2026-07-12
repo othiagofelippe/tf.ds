@@ -3,7 +3,7 @@ import tokensPreset from "../../packages/tokens/dist/tailwind/preset.js"
 
 const config: Config = {
   presets: [tokensPreset],
-  content: ["./src/**/*.{ts,tsx}", "../../packages/components/src/**/*.{ts,tsx}"],
+  content: ["./src/**/*.{ts,tsx}", "../../packages/react/src/**/*.{ts,tsx}"],
   theme: {
     extend: {
       transitionDuration: {

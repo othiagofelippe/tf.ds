@@ -45,7 +45,7 @@ Em `docs/specs/<name-lowercase>/requirements.md`:
 pnpm changeset
 ```
 
-Selecione `@tfds/components` com bump `minor` e descreva a promoção do componente.
+Selecione `@tfds/react` com bump `minor` e descreva a promoção do componente.
 
 ### Passo 5 — Informar
 

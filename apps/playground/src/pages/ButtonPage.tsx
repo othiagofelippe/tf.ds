@@ -1,4 +1,4 @@
-import { Button } from "@tfds/components"
+import { Button } from "@tfds/react"
 import { Loader2, Trash2, ExternalLink } from "lucide-react"
 
 const VARIANTS = ["primary", "secondary", "outline", "ghost", "destructive", "link"] as const

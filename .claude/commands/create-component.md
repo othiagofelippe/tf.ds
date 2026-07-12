@@ -11,11 +11,11 @@ Cria um novo componente completo no tf.ds seguindo o fluxo spec-driven.
 ## O que será criado
 
 1. **Spec** em `docs/specs/<name>/` (requirements + design + tasks)
-2. **Componente** em `packages/components/src/components/<name>/`
+2. **Componente** em `packages/react/src/components/<name>/`
    - `<name>.tsx` — componente com forwardRef
    - `<name>.variants.ts` — CVA variants
    - `index.ts` — exports
-3. **Export** atualizado em `packages/components/src/index.ts`
+3. **Export** atualizado em `packages/react/src/index.ts`
 
 ## Instruções
 
@@ -50,7 +50,7 @@ Siga rigorosamente os padrões do tf.ds:
 - `cn()` de `../../lib/cn`
 - Props i18n com fallback em inglês para textos internos
 
-Consulte `packages/components/src/components/button/` como referência de padrão.
+Consulte `packages/react/src/components/button/` como referência de padrão.
 
 ### Passo 3 — Validar
 

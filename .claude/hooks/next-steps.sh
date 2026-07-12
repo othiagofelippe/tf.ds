@@ -14,14 +14,14 @@ SPEC_FILES=$(echo "$CHANGED" | grep -E 'docs/specs/[^/]+/requirements\.md' | gre
 if [ -n "$SPEC_FILES" ]; then
   COMPONENT=$(echo "$SPEC_FILES" | head -1 | sed 's|.*docs/specs/\([^/]*\)/.*|\1|')
   PASCAL=$(echo "$COMPONENT" | sed 's/-\([a-z]\)/\U\1/g; s/^\([a-z]\)/\U\1/g')
-  COMPONENT_EXISTS=$(find packages/components/src/components/"$COMPONENT" -name "*.tsx" 2>/dev/null | head -1)
+  COMPONENT_EXISTS=$(find packages/react/src/components/"$COMPONENT" -name "*.tsx" 2>/dev/null | head -1)
   if [ -z "$COMPONENT_EXISTS" ]; then
     SUGGESTIONS+=("📋 Spec de \`$PASCAL\` criada → \`/create-component $PASCAL\` para implementar")
   fi
 fi
 
 # Componente criado mas sem testes
-COMPONENT_FILES=$(echo "$CHANGED" | grep -E 'packages/components/src/components/[^/]+/[^.]+\.tsx$' | grep -v '\.test\.' | grep -v '\.stories\.')
+COMPONENT_FILES=$(echo "$CHANGED" | grep -E 'packages/react/src/components/[^/]+/[^.]+\.tsx$' | grep -v '\.test\.' | grep -v '\.stories\.')
 if [ -n "$COMPONENT_FILES" ]; then
   COMPONENT=$(echo "$COMPONENT_FILES" | head -1 | sed 's|.*components/\([^/]*\)/.*|\1|')
   PASCAL=$(echo "$COMPONENT" | sed 's/-\([a-z]\)/\U\1/g; s/^\([a-z]\)/\U\1/g')
@@ -39,7 +39,7 @@ if [ -n "$TEST_FILES" ]; then
 fi
 
 # Componente existente modificado (não novo)
-MODIFIED=$(echo "$CHANGED" | grep '^ M' | grep -E 'packages/components/src/components/[^/]+/[^.]+\.tsx$' | grep -v '\.test\.' | grep -v '\.stories\.')
+MODIFIED=$(echo "$CHANGED" | grep '^ M' | grep -E 'packages/react/src/components/[^/]+/[^.]+\.tsx$' | grep -v '\.test\.' | grep -v '\.stories\.')
 if [ -n "$MODIFIED" ]; then
   COMPONENT=$(echo "$MODIFIED" | head -1 | sed 's|.*components/\([^/]*\)/.*|\1|')
   PASCAL=$(echo "$COMPONENT" | sed 's/-\([a-z]\)/\U\1/g; s/^\([a-z]\)/\U\1/g')

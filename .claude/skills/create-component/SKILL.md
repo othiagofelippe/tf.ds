@@ -14,7 +14,7 @@ Crie o componente `$name` no tf.ds seguindo o fluxo spec-driven completo.
 ## Contexto atual
 
 Componentes existentes:
-!`find packages/components/src/components -maxdepth 1 -mindepth 1 -type d -exec basename {} \; 2>/dev/null | sort | sed 's/^/  - /'`
+!`find packages/react/src/components -maxdepth 1 -mindepth 1 -type d -exec basename {} \; 2>/dev/null | sort | sed 's/^/  - /'`
 
 Specs existentes:
 !`find docs/specs -maxdepth 1 -mindepth 1 -type d ! -name '_template' -exec basename {} \; 2>/dev/null | sort | sed 's/^/  - /'`
@@ -42,7 +42,7 @@ Crie `docs/specs/<name-lowercase>/tasks.md` baseado no template em `docs/specs/_
 
 ## Passo 2 — Implementação
 
-Estrutura obrigatória em `packages/components/src/components/<name-lowercase>/`:
+Estrutura obrigatória em `packages/react/src/components/<name-lowercase>/`:
 
 ```
 <name-lowercase>/
@@ -62,11 +62,11 @@ Padrões obrigatórios:
 - `displayName` definido
 - Props i18n com fallback em inglês (ex: `loadingLabel = "Loading..."`)
 
-Consulte `packages/components/src/components/button/` como referência.
+Consulte `packages/react/src/components/button/` como referência.
 
 ## Passo 3 — Export
 
-Adicione o export em `packages/components/src/index.ts`:
+Adicione o export em `packages/react/src/index.ts`:
 
 ```ts
 export { ComponentName, type ComponentNameProps } from "./components/<name-lowercase>"
@@ -75,7 +75,7 @@ export { ComponentName, type ComponentNameProps } from "./components/<name-lower
 ## Passo 4 — Validar build
 
 ```bash
-pnpm --filter @tfds/components build
+pnpm --filter @tfds/react build
 ```
 
 ## Passo 5 — Relatório final

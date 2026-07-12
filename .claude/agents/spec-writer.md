@@ -20,7 +20,7 @@ tf.ds é um design system opinado. Componentes:
 - Seguem WCAG AA obrigatório
 - Usam tokens semânticos (nunca valores hardcoded)
 
-Consulte `packages/components/src/components/button/` como referência de padrão implementado.
+Consulte `packages/react/src/components/button/` como referência de padrão implementado.
 Consulte `docs/specs/button/` como referência de spec bem escrita.
 
 ## O que produzir

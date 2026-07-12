@@ -7,14 +7,14 @@ Design system context for AI coding assistants.
 tf.ds is a professional, opinionated React design system by Thiago Felippe. It ships as two npm packages:
 
 - `@tfds/tokens` — design tokens in W3C DTCG format
-- `@tfds/components` — React components (Radix UI + CVA + Tailwind 4)
+- `@tfds/react` — React components (Radix UI + CVA + Tailwind 4)
 
 ## Monorepo Structure
 
 ```
 apps/docs/           → Storybook (documentation)
 packages/tokens/     → Style Dictionary + DTCG tokens
-packages/components/ → React components
+packages/react/      → React components
 packages/tsconfig/   → Shared TypeScript configs
 packages/eslint-config/ → Shared ESLint config
 docs/adr/            → Architecture Decision Records
@@ -71,7 +71,7 @@ A component is `stable` when it has: stories (all variants/states), Controls, Do
 ## Key Files
 
 - Token source: `packages/tokens/src/`
-- Component source: `packages/components/src/`
+- Component source: `packages/react/src/`
 - ADRs: `docs/adr/`
 - Build script (tokens): `packages/tokens/build.js`
-- Bundle config (components): `packages/components/tsup.config.ts`
+- Bundle config (components): `packages/react/tsup.config.ts`
