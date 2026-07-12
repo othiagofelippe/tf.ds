@@ -1,8 +1,8 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "pnpm --filter @tfds/tokens build && pnpm --filter @tfds/docs build",
+  "buildCommand": "pnpm turbo run build --filter=@tfds/docs...",
   "outputDirectory": "apps/docs/storybook-static",
   "installCommand": "pnpm install",
   "framework": null,
-  "ignoreCommand": "git diff --quiet HEAD^ HEAD -- apps/docs packages/components packages/tokens 2>/dev/null || exit 1"
+  "ignoreCommand": "git diff --quiet ${VERCEL_GIT_PREVIOUS_SHA} HEAD -- apps/docs packages/react packages/tokens packages/icons packages/analytics 2>/dev/null || exit 1"
 }
