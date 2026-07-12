@@ -26,6 +26,22 @@
       "name": "placeholder",
       "type": "string",
       "description": "Texto de placeholder exibido quando vazio."
+    },
+    {
+      "name": "analyticsEnabled",
+      "type": "boolean",
+      "default": "true",
+      "description": "Controla se o change emite evento de analytics."
+    },
+    {
+      "name": "analyticsCustomParams",
+      "type": "Record<string, unknown>",
+      "description": "Dados extras anexados ao evento de analytics — única via permitida para campos com piiRisk medium/high, nunca o value do campo."
+    },
+    {
+      "name": "screenName",
+      "type": "string",
+      "description": "Sobrescreve o screen_name do AnalyticsProvider para este componente."
     }
   ],
   "variants": {
@@ -74,7 +90,7 @@
     "Não use placeholder como substituto do rótulo."
   ],
   "analytics": {
-    "analyticsDefault": "off",
+    "analyticsDefault": "on",
     "supportedEvents": ["component_change"],
     "piiRisk": "medium"
   }

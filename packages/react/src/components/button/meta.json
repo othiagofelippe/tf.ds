@@ -33,6 +33,22 @@
       "type": "boolean",
       "default": "false",
       "description": "Desabilita o botão."
+    },
+    {
+      "name": "analyticsEnabled",
+      "type": "boolean",
+      "default": "true",
+      "description": "Controla se o clique emite evento de analytics."
+    },
+    {
+      "name": "analyticsCustomParams",
+      "type": "Record<string, unknown>",
+      "description": "Dados extras anexados ao evento de analytics."
+    },
+    {
+      "name": "screenName",
+      "type": "string",
+      "description": "Sobrescreve o screen_name do AnalyticsProvider para este componente."
     }
   ],
   "variants": {
@@ -78,7 +94,7 @@
     "Não use o botão para navegação — prefira um link semântico."
   ],
   "analytics": {
-    "analyticsDefault": "off",
+    "analyticsDefault": "on",
     "supportedEvents": ["component_click"],
     "piiRisk": "low"
   }

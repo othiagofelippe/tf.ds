@@ -89,7 +89,7 @@
     "Não defina role — HStack não é focável nem tem semântica de widget por padrão."
   ],
   "analytics": {
-    "analyticsDefault": "off",
+    "analyticsDefault": "excluded",
     "supportedEvents": [],
     "piiRisk": "low"
   }

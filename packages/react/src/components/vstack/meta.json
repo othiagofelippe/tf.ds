@@ -82,7 +82,7 @@
     "Não defina role — VStack não é focável nem tem semântica de widget por padrão."
   ],
   "analytics": {
-    "analyticsDefault": "off",
+    "analyticsDefault": "excluded",
     "supportedEvents": [],
     "piiRisk": "low"
   }

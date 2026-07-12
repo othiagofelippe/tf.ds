@@ -41,7 +41,7 @@
     "Não adicione animação diretamente no Card — isso é responsabilidade do consumidor."
   ],
   "analytics": {
-    "analyticsDefault": "off",
+    "analyticsDefault": "excluded",
     "supportedEvents": [],
     "piiRisk": "low"
   }
