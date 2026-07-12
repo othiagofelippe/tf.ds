@@ -1,0 +1,67 @@
+{
+  "name": "Badge",
+  "componentName": "badge",
+  "status": "experimental",
+  "description": "Indicador de status compacto do tf.ds. Renderiza um <span> não interativo com cinco variantes semânticas e dois tamanhos. Não é focável — é conteúdo informativo, não elemento interativo.",
+  "props": [
+    {
+      "name": "variant",
+      "type": "\"default\" | \"success\" | \"warning\" | \"error\" | \"info\"",
+      "default": "default",
+      "description": "Cor semântica do badge."
+    },
+    {
+      "name": "size",
+      "type": "\"sm\" | \"md\"",
+      "default": "md",
+      "description": "Tamanho do badge."
+    }
+  ],
+  "variants": {
+    "variant": ["default", "success", "warning", "error", "info"],
+    "size": ["sm", "md"]
+  },
+  "tokensUsed": [
+    "font.family.sans",
+    "font.weight.medium",
+    "font.size.xs",
+    "font.size.sm",
+    "font.letter-spacing.wide",
+    "color.bg.muted",
+    "color.text.secondary",
+    "color.border.subtle",
+    "color.feedback.success.subtle",
+    "color.text.success",
+    "color.feedback.warning.subtle",
+    "color.text.warning",
+    "color.feedback.error.subtle",
+    "color.text.error",
+    "color.action.primary.subtle",
+    "color.action.primary"
+  ],
+  "examples": [
+    {
+      "title": "Badge de sucesso",
+      "code": "<Badge variant=\"success\">Ativo</Badge>"
+    },
+    {
+      "title": "Badge de erro pequeno",
+      "code": "<Badge variant=\"error\" size=\"sm\">Falhou</Badge>"
+    }
+  ],
+  "dos": [
+    "Use a variante cuja cor comunica o status real (success, warning, error, info).",
+    "Mantenha o texto curto — badges são rótulos, não frases.",
+    "Combine com Typography próximo para dar contexto ao status."
+  ],
+  "donts": [
+    "Não use className para sobrescrever estilos — use as props declaradas.",
+    "Não use Badge como botão ou link — ele não é interativo nem focável.",
+    "Não dependa só da cor para transmitir o status — inclua texto legível."
+  ],
+  "analytics": {
+    "analyticsDefault": "off",
+    "supportedEvents": ["component_display"],
+    "piiRisk": "low"
+  }
+}

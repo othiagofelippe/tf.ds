@@ -4,13 +4,15 @@ import { cn } from "../../lib/cn"
 import { badgeVariants } from "./badge.variants"
 
 interface BadgeProps
-  extends React.HTMLAttributes<HTMLSpanElement>, VariantProps<typeof badgeVariants> {}
+  extends
+    Omit<React.HTMLAttributes<HTMLSpanElement>, "className">,
+    VariantProps<typeof badgeVariants> {}
 
 /** @experimental */
 const Badge = forwardRef<HTMLSpanElement, BadgeProps>(
-  ({ variant, size, className, children, ...props }, ref) => {
+  ({ variant, size, children, ...props }, ref) => {
     return (
-      <span ref={ref} className={cn(badgeVariants({ variant, size }), className)} {...props}>
+      <span ref={ref} className={cn(badgeVariants({ variant, size }))} {...props}>
         {children}
       </span>
     )
