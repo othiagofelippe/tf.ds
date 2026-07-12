@@ -210,6 +210,12 @@ async function buildIndex() {
   await writeFile("dist/css/index.css", cssImports)
 }
 
+async function buildJsIndex() {
+  const { writeFile, mkdir } = await import("fs/promises")
+  await mkdir("dist/js", { recursive: true })
+  await writeFile("dist/js/index.js", `export * from './primitives.js'\n`)
+}
+
 async function buildTailwindPreset() {
   const preset = `
 export default {
@@ -280,6 +286,7 @@ async function main() {
   }
   await buildTypes()
   await buildIndex()
+  await buildJsIndex()
   await buildTailwindPreset()
 
   console.log("Done!")

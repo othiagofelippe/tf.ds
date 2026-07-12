@@ -21,7 +21,8 @@
     "dev": "node build.js --watch",
     "lint": "node scripts/lint-tokens.mjs",
     "type-check": "tsc --noEmit -p tsconfig.json",
-    "test": "vitest run"
+    "test": "vitest run",
+    "verify-pack": "node ../../scripts/verify-pack.mjs"
   },
   "devDependencies": {
     "@tfds/tsconfig": "workspace:*",
