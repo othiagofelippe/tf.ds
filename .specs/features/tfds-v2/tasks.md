@@ -176,14 +176,26 @@ T33 → T34 → T35 → T36 → T37
 **Tests**: none · **Gate**: build
 **Commit**: `chore(claude): add new-component scaffold skill`
 
-### T10–T14: Retrofit Button / Typography / Label / Badge / Input
+### T10–T14: Retrofit Button / Typography / Label / Badge / Input ✅ CONCLUÍDO
 
 **What** (um task por componente): stories (todas variantes/estados), meta.json válido, testes cobrindo ACs/variantes, remover `className` da assinatura (AD-007), foco visível testado.
 **Where**: `packages/react/src/components/[name]/`
 **Depends on**: T10←T8,T6; T11..T14←T10 (padrão estabelecido) · **Reuses**: `button.test.tsx` como template · **Requirement**: CMP-03, CMP-06
-**Done when** (cada): [ ] pasta padrão completa; [ ] meta.json valida contra schema; [ ] testes passam (contagem registrada); [ ] stories renderizam
+**Done when** (cada): [x] pasta padrão completa; [x] meta.json valida contra schema; [x] testes passam (contagem registrada); [x] stories renderizam
 **Tests**: unit · **Gate**: quick
 **Commit**: `feat(react): retrofit [name] to v2 convention`
+
+**Resultado (Batch A, sub-agent worker)**:
+
+- T10 Button — `aac89b0`
+- T11 Typography — `7f45213`
+- T12 Label — `08fc7ac`
+- T13 Badge — `2d31d0d`
+- T14 Input — `7786628`
+- Testes: 94 passed, 0 failed (suíte `@tfds/react`; baseline 90 + 4 novos: foco visível em Button e Input)
+- `className` removido da interface de props dos 5 via `Omit<..., "className">` (AD-007)
+- Teste de foco visível adicionado só nos componentes focáveis (Button, Input); Typography/Label/Badge documentados no meta.json como não-focáveis, sem teste inventado
+- Gate build final (`pnpm build && pnpm type-check && pnpm test`): verde, exceto falha isolada e pré-existente em `@tfds/icons` (fora de escopo, já registrada em STATE.md)
 
 ### T15–T16: Retrofit VStack / HStack
 
