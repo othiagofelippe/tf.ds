@@ -17,6 +17,6 @@
 ## Handoff
 
 - **Feature ativa:** `tfds-v2` — spec e tasks aprovadas, execução iniciada
-- **Fase:** Execute — Phase 1 (Tokens) em andamento via sub-agent, branch `feat/tfds-v2-phase-1`
-- **Próximo passo:** Verifier ao fim de cada batch; próximos batches seguem Phase 2 → 8 (ver `.specs/features/tfds-v2/tasks.md`)
+- **Fase:** Execute — Phase 1 (Tokens, T1-T5) **concluída** na branch `feat/tfds-v2-phase-1` (commits atômicos por task, gate build/quick verde em cada uma). Verifier ainda não rodou (roda ao fim de toda a execução, ou a pedido).
+- **Próximo passo:** aguardando decisão do usuário — continuar para Phase 2 (Convenção: T6-T9, schema meta.json + guardrails.json + rename @tfds/components→@tfds/react + skill de scaffold) ou pausar/revisar antes de seguir
 - **Contexto externo:** plano completo em memória do Claude (`project_tfds_v2_plan.md`); consumidor é o repo `my-portfolio` (branch develop); ver AD-009 sobre track TDS-0NN paralelo
