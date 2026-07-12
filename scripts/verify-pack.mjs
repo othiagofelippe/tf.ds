@@ -41,8 +41,15 @@ async function resolveWildcardExport(packageDir, target) {
 }
 
 async function resolveExport(packageDir, specifier, target) {
+  if (target && typeof target === "object") {
+    for (const conditionalTarget of Object.values(target)) {
+      await resolveExport(packageDir, specifier, conditionalTarget)
+    }
+    return
+  }
+
   if (typeof target !== "string") {
-    throw new Error(`Unsupported export target for "${specifier}": expected a string`)
+    throw new Error(`Unsupported export target for "${specifier}": expected a string or conditions object`)
   }
 
   if (target.includes("*")) {
