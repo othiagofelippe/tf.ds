@@ -16,7 +16,9 @@
 
 ## Handoff
 
-- **Feature ativa:** `tfds-v2` — spec e tasks aprovadas, execução iniciada
-- **Fase:** Execute — Phase 1 (Tokens, T1-T5) **concluída** na branch `feat/tfds-v2-phase-1` (commits atômicos por task, gate build/quick verde em cada uma). Verifier ainda não rodou (roda ao fim de toda a execução, ou a pedido).
-- **Próximo passo:** aguardando decisão do usuário — continuar para Phase 2 (Convenção: T6-T9, schema meta.json + guardrails.json + rename @tfds/components→@tfds/react + skill de scaffold) ou pausar/revisar antes de seguir
+- **Feature ativa:** `tfds-v2` — spec e tasks aprovadas, execução em andamento
+- **Fase:** Execute — Phase 1 (Tokens, T1-T5) e Phase 2 (Convenção, T6-T9) **concluídas** na branch `feat/tfds-v2-phase-1` (9 commits atômicos, gate build/quick verde em cada task). Verifier ainda não rodou (roda ao fim de toda a execução da feature, ou a pedido).
+- **Phase 2 — o que foi feito:** `docs/schemas/component-meta.schema.json` (T6, validado com fixture válida/inválida via `npx ajv-cli`); `docs/guardrails.json` (T7, matriz tag→primitivo + exceções `a,img,li,svg,form,table` conforme AD-004); rename `@tfds/components` → `@tfds/react` (T8, incluindo `apps/docs`, `apps/playground`, `README.md`, `.size-limit.json`, `CLAUDE.md`, tailwind configs e skills/rules/hooks ativos em `.claude/` — documentos históricos como `tasks/*.md`, `docs/adr/`, `docs/specs/` foram deixados intocados de propósito); skill `.claude/skills/new-component/SKILL.md` (T9, scaffold puro do componente v2, documentada em `CLAUDE.md`).
+- **Achados durante a Phase 2:** `pnpm lint` (raiz) falha com "out of memory" e `pnpm --filter @tfds/icons type-check` falha por `@types/node` ausente — ambos confirmados **pré-existentes** (reproduzidos também na branch limpa antes das mudanças), não bloqueiam a Phase 2 e não foram corrigidos (fora de escopo das tasks T6-T9).
+- **Próximo passo:** aguardando decisão do usuário — continuar para Phase 3 (Retrofit A: T10-T14, componentes Button/Typography/Label/Badge/Input) ou pausar/revisar antes de seguir
 - **Contexto externo:** plano completo em memória do Claude (`project_tfds_v2_plan.md`); consumidor é o repo `my-portfolio` (branch develop); ver AD-009 sobre track TDS-0NN paralelo
