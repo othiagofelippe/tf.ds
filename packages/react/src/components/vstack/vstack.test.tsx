@@ -74,6 +74,16 @@ describe("VStack", () => {
     })
   })
 
+  describe("className", () => {
+    it("merges custom className with CVA classes", () => {
+      render(<VStack className="mt-8">Content</VStack>)
+      const element = screen.getByText("Content")
+      expect(element.className).toContain("mt-8")
+      expect(element.className).toContain("flex")
+      expect(element.className).toContain("flex-col")
+    })
+  })
+
   describe("forwardRef", () => {
     it("forwards ref to the underlying DOM element", () => {
       const ref = createRef<HTMLElement>()

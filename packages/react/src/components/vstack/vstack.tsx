@@ -16,19 +16,17 @@ type VStackElement =
   | "ol"
 
 interface VStackProps
-  extends
-    Omit<React.HTMLAttributes<HTMLElement>, "className">,
-    VariantProps<typeof vstackVariants> {
+  extends React.HTMLAttributes<HTMLElement>, VariantProps<typeof vstackVariants> {
   as?: VStackElement
 }
 
 /** @experimental */
 const VStack = forwardRef<HTMLElement, VStackProps>(
-  ({ as: Tag = "div", gap, align, justify, children, ...props }, ref) => {
+  ({ as: Tag = "div", gap, align, justify, className, children, ...props }, ref) => {
     return (
       <Tag
         ref={ref as React.RefCallback<HTMLElement>}
-        className={cn(vstackVariants({ gap, align, justify }))}
+        className={cn(vstackVariants({ gap, align, justify }), className)}
         {...props}
       >
         {children}

@@ -1,0 +1,89 @@
+{
+  "name": "VStack",
+  "componentName": "vstack",
+  "status": "experimental",
+  "description": "Primitivo de layout que empilha filhos verticalmente com flexbox. Expõe gap, align e justify. Como primitivo de layout (AD-007), aceita className para composição — exceção à regra props-only do design system.",
+  "props": [
+    {
+      "name": "as",
+      "type": "\"div\" | \"section\" | \"article\" | \"aside\" | \"nav\" | \"header\" | \"footer\" | \"main\" | \"ul\" | \"ol\"",
+      "default": "div",
+      "description": "Elemento HTML semântico renderizado."
+    },
+    {
+      "name": "gap",
+      "type": "\"0\" | \"0.5\" | \"1\" | \"1.5\" | \"2\" | \"2.5\" | \"3\" | \"3.5\" | \"4\" | \"5\" | \"6\" | \"7\" | \"8\" | \"9\" | \"10\" | \"12\" | \"14\" | \"16\" | \"20\" | \"24\"",
+      "default": "0",
+      "description": "Espaçamento entre os filhos, na escala do Tailwind."
+    },
+    {
+      "name": "align",
+      "type": "\"start\" | \"center\" | \"end\" | \"stretch\"",
+      "default": "stretch",
+      "description": "Alinhamento no eixo transversal (align-items)."
+    },
+    {
+      "name": "justify",
+      "type": "\"start\" | \"center\" | \"end\" | \"between\" | \"around\"",
+      "default": "start",
+      "description": "Distribuição no eixo principal (justify-content)."
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "description": "Classes utilitárias extras. Permitido apenas em primitivos de layout (VStack, HStack, Grid) por AD-007."
+    }
+  ],
+  "variants": {
+    "gap": [
+      "0",
+      "0.5",
+      "1",
+      "1.5",
+      "2",
+      "2.5",
+      "3",
+      "3.5",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "12",
+      "14",
+      "16",
+      "20",
+      "24"
+    ],
+    "align": ["start", "center", "end", "stretch"],
+    "justify": ["start", "center", "end", "between", "around"]
+  },
+  "tokensUsed": [],
+  "examples": [
+    {
+      "title": "Empilhar com espaçamento",
+      "code": "<VStack gap=\"4\">\n  <Card />\n  <Card />\n</VStack>"
+    },
+    {
+      "title": "Centralizar filhos",
+      "code": "<VStack gap=\"2\" align=\"center\">\n  <Badge>Novo</Badge>\n  <Typography>Título</Typography>\n</VStack>"
+    }
+  ],
+  "dos": [
+    "Use VStack para empilhamento vertical em vez de aplicar flex-col manualmente.",
+    "Use a prop as para escolher o elemento semântico correto (nav, section, ul).",
+    "Use className apenas para ajustes de layout (margem, largura), não para estilizar a superfície."
+  ],
+  "donts": [
+    "Não aninhe VStack quando um único gap resolve o layout.",
+    "Não use className para introduzir cores ou bordas — isso é responsabilidade de componentes estilizados como Card.",
+    "Não defina role — VStack não é focável nem tem semântica de widget por padrão."
+  ],
+  "analytics": {
+    "analyticsDefault": "off",
+    "supportedEvents": [],
+    "piiRisk": "low"
+  }
+}
