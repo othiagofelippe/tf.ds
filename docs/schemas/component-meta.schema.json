@@ -1,0 +1,114 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://tfds.dev/schemas/component-meta.schema.json",
+  "title": "ComponentMeta",
+  "description": "Contract for a tf.ds component's meta.json — single source of registry for Storybook, MCP, and agents.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "name",
+    "componentName",
+    "status",
+    "description",
+    "props",
+    "variants",
+    "tokensUsed",
+    "examples",
+    "dos",
+    "donts",
+    "analytics"
+  ],
+  "properties": {
+    "name": {
+      "type": "string",
+      "pattern": "^[A-Z][a-zA-Z0-9]*$",
+      "description": "PascalCase component name, e.g. \"Button\""
+    },
+    "componentName": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*$",
+      "description": "snake_case name for analytics, e.g. \"button\""
+    },
+    "status": {
+      "type": "string",
+      "enum": ["experimental", "stable", "deprecated"]
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "props": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "type", "description"],
+        "properties": {
+          "name": { "type": "string", "minLength": 1 },
+          "type": { "type": "string", "minLength": 1 },
+          "default": { "type": "string" },
+          "description": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "variants": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": { "type": "string" }
+      }
+    },
+    "tokensUsed": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "examples": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["title", "code"],
+        "properties": {
+          "title": { "type": "string", "minLength": 1 },
+          "code": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "dos": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "donts": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "analytics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["analyticsDefault", "supportedEvents", "piiRisk"],
+      "properties": {
+        "analyticsDefault": {
+          "type": "string",
+          "enum": ["on", "off", "excluded"]
+        },
+        "supportedEvents": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "component_display",
+              "component_click",
+              "component_change",
+              "component_view",
+              "component_error"
+            ]
+          }
+        },
+        "piiRisk": {
+          "type": "string",
+          "enum": ["low", "medium", "high"]
+        }
+      }
+    }
+  }
+}
