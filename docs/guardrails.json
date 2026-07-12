@@ -1,0 +1,33 @@
+{
+  "rules": [
+    {
+      "id": "no-native-tag",
+      "description": "Native HTML tags with a tf.ds primitive replacement are disallowed in consumer code; use the design system component instead of the raw tag.",
+      "severity": "critical",
+      "matrix": {
+        "button": ["Button"],
+        "input": ["Input"],
+        "label": ["Label"],
+        "h1": ["Typography"],
+        "h2": ["Typography"],
+        "h3": ["Typography"],
+        "h4": ["Typography"],
+        "h5": ["Typography"],
+        "h6": ["Typography"],
+        "p": ["Typography"],
+        "span": ["Typography"],
+        "strong": ["Typography"],
+        "em": ["Typography"],
+        "blockquote": ["Typography"],
+        "figcaption": ["Typography"],
+        "legend": ["Typography"],
+        "div": ["VStack", "HStack"]
+      },
+      "exceptions": ["a", "img", "li", "svg", "form", "table"],
+      "examples": {
+        "wrong": "<button className=\"btn\">Click</button>",
+        "right": "<Button>Click</Button>"
+      }
+    }
+  ]
+}
