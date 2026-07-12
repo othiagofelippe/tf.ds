@@ -246,6 +246,12 @@ importers:
       "@tfds/eslint-config":
         specifier: workspace:*
         version: link:../eslint-config
+      "@tfds/react":
+        specifier: workspace:*
+        version: link:../react
+      "@tfds/tokens":
+        specifier: workspace:*
+        version: link:../tokens
       "@tfds/tsconfig":
         specifier: workspace:*
         version: link:../tsconfig
