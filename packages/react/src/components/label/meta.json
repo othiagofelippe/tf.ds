@@ -1,0 +1,63 @@
+{
+  "name": "Label",
+  "componentName": "label",
+  "status": "experimental",
+  "description": "Rótulo de campo de formulário do tf.ds. Renderiza um elemento <label> semântico, associável a um controle via `htmlFor`, com três tamanhos e estado disabled. Não é focável por si — o foco vai ao controle associado.",
+  "props": [
+    {
+      "name": "size",
+      "type": "\"sm\" | \"md\" | \"lg\"",
+      "default": "md",
+      "description": "Tamanho do rótulo."
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "default": "false",
+      "description": "Aparência desabilitada, para acompanhar um controle desabilitado."
+    },
+    {
+      "name": "htmlFor",
+      "type": "string",
+      "description": "Id do controle de formulário associado."
+    }
+  ],
+  "variants": {
+    "size": ["sm", "md", "lg"]
+  },
+  "tokensUsed": [
+    "font.family.sans",
+    "font.weight.medium",
+    "font.size.xs",
+    "font.size.sm",
+    "font.size.md",
+    "font.letter-spacing.wide",
+    "color.text.primary",
+    "opacity.disabled"
+  ],
+  "examples": [
+    {
+      "title": "Rótulo associado a um input",
+      "code": "<Label htmlFor=\"email\">Email</Label>\n<Input id=\"email\" />"
+    },
+    {
+      "title": "Rótulo desabilitado",
+      "code": "<Label disabled htmlFor=\"name\">Nome</Label>"
+    }
+  ],
+  "dos": [
+    "Sempre associe o rótulo ao controle via `htmlFor` correspondente ao `id` do campo.",
+    "Acompanhe o estado disabled do campo com o disabled do rótulo.",
+    "Mantenha o texto do rótulo curto e descritivo."
+  ],
+  "donts": [
+    "Não use className para sobrescrever estilos — use as props declaradas.",
+    "Não use Label para texto que não rotula um campo — prefira Typography.",
+    "Não omita `htmlFor` quando o rótulo não envolve o controle."
+  ],
+  "analytics": {
+    "analyticsDefault": "off",
+    "supportedEvents": ["component_display"],
+    "piiRisk": "low"
+  }
+}

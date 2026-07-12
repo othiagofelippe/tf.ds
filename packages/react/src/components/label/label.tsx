@@ -4,13 +4,15 @@ import { cn } from "../../lib/cn"
 import { labelVariants } from "./label.variants"
 
 interface LabelProps
-  extends React.LabelHTMLAttributes<HTMLLabelElement>, VariantProps<typeof labelVariants> {}
+  extends
+    Omit<React.LabelHTMLAttributes<HTMLLabelElement>, "className">,
+    VariantProps<typeof labelVariants> {}
 
 /** @experimental */
 const Label = forwardRef<HTMLLabelElement, LabelProps>(
-  ({ size, disabled, className, children, ...props }, ref) => {
+  ({ size, disabled, children, ...props }, ref) => {
     return (
-      <label ref={ref} className={cn(labelVariants({ size, disabled }), className)} {...props}>
+      <label ref={ref} className={cn(labelVariants({ size, disabled }))} {...props}>
         {children}
       </label>
     )
